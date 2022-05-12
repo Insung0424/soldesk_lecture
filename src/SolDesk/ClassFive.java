@@ -189,18 +189,222 @@ public class ClassFive {
 //				System.out.println(arr[i][j]);
 //			}
 //		}
-		int a[]= new int[10];
-		Scanner sc =new Scanner(System.in);
-		for(int i=0;i<11;i++) {	
-			a[i]=sc.nextInt();
-			if(a[i]%5==0) {
-				System.out.println(a[i]);
-			}
-		}
+//		int a[]= new int[10];
+//		Scanner sc =new Scanner(System.in);
+//		for(int i=0;i<11;i++) {	
+//			a[i]=sc.nextInt();
+//			if(a[i]%5==0) {
+//				System.out.println(a[i]);
+//			}
+//		}
 		
-		
-		
+//		int sum=0;
+//		for(int i=1;i<11;i++) {
+//			sum+=i;
+//		}
+//		System.out.println(sum);
+//		int sum=0;
+//		int i=1;
+//		while(i<11) {
+//			sum+=i;
+//			i++;
+//		}
+//		System.out.println(sum);
+//		int sum=0;
+//		int i=1;
+//		do {
+//			sum+=i;
+//			i++;
+//		}while(i<11);
+//		System.out.println(sum);
 
+//		Scanner sc=new Scanner(System.in);
+//		double sum=0;
+//		int c=0;
+//		while(true) {
+//			 int i = sc.nextInt();
+//			 sum+=i;
+//			 if(i==0) {
+//				 break;
+//			 }
+//			 c++;
+//		}
+//		System.out.println(sum/c);
+
+//		int i=0,sum=0;
+//		while(true) {
+//			i+=2;
+//			sum+=i;
+//			if(i>=10) {
+//				break;
+//			}
+//		}
+//		System.out.println(sum);
+
+//		int i=0,sum=0;
+//		do {
+//			i++;
+//			if(i%2==1){
+//				continue;
+//			}
+//			sum+=i;
+//		}while(i<10);
+//		System.out.println(sum);
+
+//		char a[]=new char[10];
+//		
+//		int b[]={0,1,2,3,4};
+//		
+//		String c[]= {"java", "c", "c++"};
+//		
+//		int d[]=new int[10];
+
+		
+//		int i=1;
+//		int sum=0;
+//		while(i<101) {
+//			if(i%5==0 && i%10==0) {
+//				sum+=i;
+//			}
+//			i++;
+//		}
+//		System.out.println(sum);
+		
+//		int i=1;
+//		int sum=0;
+//		do {
+//			if(i%5==0 && i%10==0) {
+//				sum+=i;
+//			}
+//			i++;
+//		}while(i<101);
+//		System.out.println(sum);
+		
+//		int sum=0;
+//		for(int i=1;i<101;i++) {
+//			if(i%5==0 && i%10==0) {
+//				sum+=i;
+//			}
+//		}
+//		System.out.println(sum);
+		
+		
+//		int arr[][]= {{1,2,3,4},
+//					  {5,6,7,8}};
+//		
+//		int ary[][]=new int [4][2];
+//		
+//		for(int i=0;i<2;i++) {
+//			for(int j=0;j<4;j++) {
+//				ary[j][i]=arr[i][j];
+//			}
+//		}
+//		for(int i=0;i<4;i++) {
+//			for(int j=0;j<2;j++) {
+//				System.out.print(ary[i][j]+" ");
+//			}
+//			System.out.println();
+//		}
+		
+//		Scanner sc = new Scanner(System.in);
+//		int s[][]=new int[2][3];
+//		int sum=0;
+//		for(int i=0;i<2;i++) {
+//			for(int j=0;j<3;j++) {
+//				s[i][j]=sc.nextInt();
+//				sum+=s[i][j];
+//			}
+//		}
+//		System.out.println(sum);
+//		
+//		for(int i=0;i<2;i++) {
+//			for(int j=0;j<3;j++) {
+//				System.out.print(s[i][j]);
+//			}
+//			System.out.println();
+//		}
+		
+//		int arr[] =new int[5]; //1차원 배열의
+//		int n=arr.length;		//배열 갯수
+
+//		int arr[][]=new int[2][5];  //2차원 배열의 
+//		int n = arr.length;			//행의 갯수
+//		System.out.println(n);		//배열명.length
+//		
+//		int m=arr[0].length;   // 2차원 배열의 
+//		System.out.println(m); // 열의 갯수 : 배열명[행의 인덱스].length
+//		
+//		String s[][]= {{"java"}, //비정방형배열
+//						{"c","c++"},
+//						{"html","css","python"}};
+//		
+//		for(int i=0;i<s.length;i++) {
+//			for(int j=0;j<s[i].length;j++) { //i값에 따라 가변
+//				System.out.println(s[i][j]);
+//			}
+//		}
+		
+//		int ary[][] = {{90, 90, 110, 110}, 
+//				{120, 110, 100, 110}, 
+//		                {120, 140, 130, 150}};
+//		int c=0;
+//		double sum = 0;
+//		for(int i=0;i<ary.length;i++) {
+//			for(int j=0;j<ary[i].length;j++) {
+//				sum+=ary[i][j];
+//				c++;
+//			}
+//		}
+//		System.out.println("평균은 : " + (sum/c));
+		
+		
+//		String s="Today is Thursday,I did my homework and wathed tv";
+//		String a[]= s.split(","); // 문자를 나눠줌 split의 반환은 []
+////		System.out.println(a[0]);
+////		System.out.println(a[1]);
+//		for(String v:a) {		
+//			System.out.println(v);
+//		}
+		
+//		String a=s.substring(4,7); // String s의 인덱스 4에서 7까지 출력
+//		System.out.println(a);	//공백도 인덱스에 포함된다
+//		
+//		String b=s.replace("homework", "study"); //문자 교환
+//		System.out.println(b); 
+//		
+//		String c=s.concat(". Totorrow is Friday");
+//		System.out.println(c);
+//		
+		
+//		Scanner sc = new Scanner(System.in);
+//		String c1=sc.next();
+//		String c2=sc.next();
+//
+//		if(c1.length()<c2.length()) { 
+//			System.out.println(c2);
+//		}
+//		else{
+//			System.out.println(c1);
+//		}
+		
+//		String a = "apple";
+//		String b = "banana";
+//		if(a.compareTo(b)>0) { // a가 b보다 나중에 나옴
+//			System.out.println(a); //apple
+//		}else if(a.compareTo(b)<0) {// b가 a보다 나중에 나옴
+//			System.out.println(b); //banana
+//		}else System.out.println("both are the same type");
+//		// 0이면 같은 문자열
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

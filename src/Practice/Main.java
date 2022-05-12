@@ -1,6 +1,6 @@
 package Practice;
 
-public class Maintwo {
+public class Main {
 
 	public static void main(String[] args) {
 		

@@ -84,16 +84,17 @@ public class ClassFive {
 //		}
 //		System.out.println("Average of the number entered" + (sum/5.0));
 		
-		Scanner sc = new Scanner(System.in);
-		int a[] = new int[5];
-		int max = 0;
-		for (int i = 0; i < 5; i++) { // 입력된 값 중 최댓값찾기
-			a[i] = sc.nextInt();
-			if (max < a[i]) {
-				max = a[i];
-			}
-		}
-		System.out.println("The biggest number is " + max);
+//		Scanner sc = new Scanner(System.in);
+//		int a[] = new int[5];
+//		int max = 0;
+//		for (int i = 0; i < 5; i++) { // 입력된 값 중 최댓값찾기
+//			a[i] = sc.nextInt();      // Find the maximum of 
+									  // the entered values
+//			if (max < a[i]) {
+//				max = a[i];
+//			}
+//		}
+//		System.out.println("The biggest number is " + max);
 		
 		
 

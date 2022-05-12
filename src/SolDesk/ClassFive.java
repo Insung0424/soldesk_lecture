@@ -1,4 +1,5 @@
 package SolDesk;
+
 import java.util.Scanner;
 
 public class ClassFive {
@@ -41,7 +42,7 @@ public class ClassFive {
 //			System.out.println(a);
 //			a=(char)(a+1); // 아스키코드상에서 a에게 1을더해주고 케릭터로변환
 //		}while(a<='z'); // a~z까지 출력
-		
+
 //		배열(array)
 //		한번에 많은 메모리 공간 선언 가능
 //		같은 타입의 데이터들이 순차적으로 저장됨
@@ -49,32 +50,53 @@ public class ClassFive {
 //		int  	ary[]  =  new  int[n];
 //		자료형 배열명인덱스 	새로생성 자료형[갯수]
 //			배열 선언    =    배열 생성
-		
+
 //		int a[] = new int[5];
 //		double b[] = new double[10];
 //		int c[] = new int[3];
 //		char d[]=new char[5];
+
+//		int a[] = {1,2,3};  //배열초기화  초기화 할 때는 갯수작성X
+//		System.out.println(a[2]); // 3
+//		
+//		float b[]= {0.1f,0.2f,0.3f,0.4f,0.5f};
+//		System.out.println(b[3]); // 0.4
+//		
+//		int c[]= {1,2,3,4,5,6,7,8,9,10};
+//		for(int i=0;i<10;i++) {
+//			System.out.println(c[i]);
+//		}
+//		
+//		Scanner sc=new Scanner(System.in);
+//		double arr[] = new double[3];
+//		for(int i=0;i<=2;i++) {
+//			arr[i]=sc.nextDouble(); //실수를 3번 입력함
+//			System.out.println(arr[i]);
+//		}
 		
-		int a[] = {1,2,3};  //배열초기화  초기화 할 때는 갯수작성X
-		System.out.println(a[2]); // 3
+//		Scanner sc=new Scanner(System.in);
+//		double a[]=new double[5];
+//		int sum=0;
+//		for(int i=0;i<5;i++) {
+//			a[i]=sc.nextDouble();
+//			sum+=a[i];
+//			System.out.println(a[i]);
+//		}
+//		System.out.println("Average of the number entered" + (sum/5.0));
 		
-		float b[]= {0.1f,0.2f,0.3f,0.4f,0.5f};
-		System.out.println(b[3]); // 0.4
-		
-		int c[]= {1,2,3,4,5,6,7,8,9,10};
-		for(int i=0;i<10;i++) {
-			System.out.println(c[i]);
+		Scanner sc = new Scanner(System.in);
+		int a[] = new int[5];
+		int max = 0;
+		for (int i = 0; i < 5; i++) { // 입력된 값 중 최댓값찾기
+			a[i] = sc.nextInt();
+			if (max < a[i]) {
+				max = a[i];
+			}
 		}
-		
-		Scanner sc=new Scanner(System.in);
-		double arr[] = new double[3];
-		for(int i=0;i<=2;i++) {
-			arr[i]=sc.nextDouble(); //실수를 3번 입력함
-		}
-		
-	 	
+		System.out.println("The biggest number is " + max);
 		
 		
+
 	}
 
 }

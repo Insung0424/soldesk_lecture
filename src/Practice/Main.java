@@ -15,18 +15,13 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
         StringBuilder sb=new StringBuilder();
-        try {
-        	while(true) {
-                st  = new StringTokenizer(bf.readLine()," ");
-                int a = Integer.parseInt(st.nextToken());
-                int b = Integer.parseInt(st.nextToken());
-    		  	sb.append(a+b).append('\n');
-    		}
-        }catch(Exception e) {
-        	
-        }finally {
-        	System.out.println(sb);
-        }
+        while(bf.readLine()==null) {
+            st  = new StringTokenizer(bf.readLine()," ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+		  	sb.append(a+b).append('\n');
+		}
+		System.out.println(sb);
 	}
 
 }

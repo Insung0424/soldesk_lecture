@@ -299,30 +299,28 @@ public class ClassSix {
 //		System.out.println(big(a));
 //		//매개 변수가 배열을 호출할 때 배열명만 적으면 됨
 		
-		Scanner s=new Scanner(System.in);
-		char a=s.next().charAt(0);
-		int b=s.nextInt();
-		int c=s.nextInt();
-		cal(a,b,c); // + b+c   /   - b-c
+//		Scanner s=new Scanner(System.in);
+//		char a=s.next().charAt(0);
+//		int b=s.nextInt();
+//		int c=s.nextInt();
+//		cal(a,b,c); // + b+c   /   - b-c
 		
 		
 	}
 	
-	static void cal(char a,int b,int c) {
-		switch(a) {
-		case '+':
-			System.out.println(b+c);
-			break;
-		case '-':
-			System.out.println(b-c);
-			break;
-		default :
-			System.out.println("그건모르겠어요");
-		}
-		
-	}
-	
-	
+//	static void cal(char a,int b,int c) {
+//		switch(a) {
+//		case '+':
+//			System.out.println(b+c);
+//			break;
+//		case '-':
+//			System.out.println(b-c);
+//			break;
+//		default :
+//			System.out.println("그건모르겠어요");
+//		}
+//		
+//	}
 	
 //	static int big(int a[]) { // a[] 입력된 배열값
 //		int max=0;

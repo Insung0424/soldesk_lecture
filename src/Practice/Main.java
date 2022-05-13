@@ -9,12 +9,16 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException{
 		BufferedReader bf =new BufferedReader(new InputStreamReader(System.in));
-		HashSet hs= new HashSet();
-		for(int i=0;i<10;i++) {
-			hs.add((Integer.parseInt(bf.readLine())%42));
+		int a=Integer.parseInt(bf.readLine());
+		if(a%4==0 && !(a%100==0)) {
+			System.out.println(1);
 		}
-		System.out.println(hs.size());
-		
+		else if(a%400==0) {
+			System.out.println(1);
+		}
+		else {
+			System.out.println(0);
+		}
 	}
 
 }

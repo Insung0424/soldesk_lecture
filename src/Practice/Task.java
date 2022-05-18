@@ -18,6 +18,7 @@ public class Task {
 			fw.write(buf,1,2);
 			fw.write("65");
 			fw.close();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

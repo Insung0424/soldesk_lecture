@@ -1,11 +1,10 @@
 package SolDesk;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 public class ClassNine {
 
@@ -244,29 +243,28 @@ public class ClassNine {
 //		out.close();
 		
 //		InputStreamReader in =new InputStreamReader(System.in);
-//		PrintWriter out = null;
+//		FileWriter out = null;
 //		try {
-//			out = new PrintWriter("sample.txt");
-//			int n =0;
+//			out = new FileWriter("sample.txt");
+//			int n;
 //			while((n=in.read())!=-1) {
-//				out.print(n);
+//				out.write(n);
 //			}
 //		}catch(Exception e) {}
 // 		in.close();
 // 		out.close();
-// 		
-//		InputStreamReader sin =new InputStreamReader(System.in);
-//		
-//		FileWriter fout = null;
-//		try {
-//			fout = new FileWriter("save.txt");
-//			int r;
-//			while((r=sin.read()) != -1) {
-//				out.write(r);
+ 		
+// 		BufferedReader fr=new BufferedReader(new FileReader("sample.txt"));
+// 
+// 		try {
+// 			String n;
+//			while((n=fr.readLine()) != null) {
+//				System.out.println(n);
 //			}
-//		}catch(Exception e) {}
-//		in.close();
-//		out.close();
+// 		}catch(Exception e) {}
+// 		fr.close();
+ 		
+		
 	}
 	
 //	static void pr(int a[],int b) {

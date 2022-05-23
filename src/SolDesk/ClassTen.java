@@ -1,7 +1,8 @@
 package SolDesk;
 
-import java.io.FileInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 //class Circle {
 //
@@ -259,30 +260,30 @@ public class ClassTen {
 //		}
 //		}catch(Exception e) {}
 		
-		Order order = new Order();
-		order.orderNumber = 202205190001L;
-		order.orderId = "abc123";
-		order.orderDate = "2022년 05월 19일";
-		order.Name = "홍길순";
-		order.orderObjectNumber = "PD0345-12";
-		order.address = "서울시 영등포구 여의도동 20번지";
-		
-		System.out.println("주문 번호 : "+order.orderNumber);
-		System.out.println("주문자 아이디 : "+order.orderId);
-		System.out.println("주문 날짜 : "+order.orderDate);
-		System.out.println("주문자 이름 : "+order.Name);
-		System.out.println("주문 상품 번호: "+order.orderObjectNumber);
-		System.out.println("배송 주소 : "+order.address);
-		
-		FileInputStream fis = new FileInputStream("test.txt");
-
-		byte[] a = new byte[6];
-		int n;
-		while ((n = fis.read(a, 0, a.length)) != -1)
-			for (int i = 0; i < a.length; i++) {
-				System.out.println(a[i]);
-			}
-		fis.close();
+//		Order order = new Order();
+//		order.orderNumber = 202205190001L;
+//		order.orderId = "abc123";
+//		order.orderDate = "2022년 05월 19일";
+//		order.Name = "홍길순";
+//		order.orderObjectNumber = "PD0345-12";
+//		order.address = "서울시 영등포구 여의도동 20번지";
+//		
+//		System.out.println("주문 번호 : "+order.orderNumber);
+//		System.out.println("주문자 아이디 : "+order.orderId);
+//		System.out.println("주문 날짜 : "+order.orderDate);
+//		System.out.println("주문자 이름 : "+order.Name);
+//		System.out.println("주문 상품 번호: "+order.orderObjectNumber);
+//		System.out.println("배송 주소 : "+order.address);
+//		
+//		FileInputStream fis = new FileInputStream("test.txt");
+//
+//		byte[] a = new byte[6];
+//		int n;
+//		while ((n = fis.read(a, 0, a.length)) != -1)
+//			for (int i = 0; i < a.length; i++) {
+//				System.out.println(a[i]);
+//			}
+//		fis.close();
 
 }
 

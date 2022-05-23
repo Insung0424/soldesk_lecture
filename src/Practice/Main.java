@@ -14,12 +14,16 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int N=Integer.parseInt(br.readLine());
 		StringTokenizer st;
+		int n = N;
+		int c=0;
 		for(int i=0;i<N;i++) {
-			st = new StringTokenizer(br.readLine());
-			int A=Integer.parseInt(st.nextToken());
-			int B=Integer.parseInt(st.nextToken());
-			bw.write((A+B)+"\n");
+			N = ((N%10)*10)+(((N%10)+(N/10))%10);
+			c++;
+			if(N == n) {
+				break;
+			}
 		}
+		System.out.println(c);
 		bw.flush();
 		bw.close();
 		br.close();

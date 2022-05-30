@@ -1,32 +1,19 @@
 package Practice;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) throws NumberFormatException, IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int N=Integer.parseInt(br.readLine());
-		StringTokenizer st;
-		int n = N;
-		int c=0;
-		for(int i=0;i<N;i++) {
-			N = ((N%10)*10)+(((N%10)+(N/10))%10);
-			c++;
-			if(N == n) {
-				break;
-			}
-		}
-		System.out.println(c);
-		bw.flush();
-		bw.close();
-		br.close();
+	public static void main(String[] args) {
+		man<men> m = new man<>(); 
+		//제네릭으로 어떤 클래스를 사용할지 결정
+		m.input(new men(20));
+		//위에서 생성한 객체를 이용 만들고자하는 클래스의 객체 생성
+		
+		man<women> wm = new man<>();
+		wm.input(new women("J"));
+		
+		
+		
 		
 	}
 }

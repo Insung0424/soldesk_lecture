@@ -412,12 +412,11 @@ public class ClassSeventeen {
 		v.add(0, 0); 
 		v.add(1,35);
 		v.add(1,50);
-		
+		v.add(2,100);
 		// 이런 줄 알았는데 아니네......
 		// 가장 마지막을 기준으로 순서가 확정됨
 		// 같은 인덱스의 삽입되는 자료가있다면 마지막 명령이
 		// 우선권을 가지고 후순위 자료들은 인덱스가 하나씩 밀림
-		
 		for(int i=0;i<v.size();i++)
 			System.out.println(v.get(i));
 		

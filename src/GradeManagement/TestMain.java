@@ -1,12 +1,14 @@
-package Practice;
+package GradeManagement;
 
 public class TestMain {
+	
 	School goodSchool = School.getInstance();
 	Subject korean;
 	Subject math;
 	GenerateGradeReport gradeReport = new GenerateGradeReport();
 
 	public static void main(String[] args) {
+		
 		TestMain test = new TestMain();
 		
 		test.createSubject();
@@ -14,16 +16,21 @@ public class TestMain {
 		
 		String report = test.gradeReport.getReport();
 		System.out.println(report);
+		
 	}
+	
 	public void createSubject() {
+		
 		korean = new Subject("korean",Define.KOREAN);
 		math = new Subject("math",Define.MATH);
 		
 		goodSchool.addSubject(korean);
 		goodSchool.addSubject(math);
+		
 	}
 	
 	public void createStudent() {
+		
 		Student student1 = new Student(181213,"안성원",korean);
 		Student student2 = new Student(181518,"안성원",math);
 		Student student3 = new Student(171230,"안성원",korean);
@@ -62,11 +69,14 @@ public class TestMain {
 		
 		addScoreForStudent(student5,korean,85);
 		addScoreForStudent(student5,math,56);
+		
 	}
 	
 	public void addScoreForStudent(Student student,Subject subject,int point) {
+		
 		Score score = new Score(student.getStudentId(), subject, point);
 		student.addSubjectScore(score);
+		
 	}
 
 }

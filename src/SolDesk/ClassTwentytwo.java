@@ -1,10 +1,15 @@
 package SolDesk;
 
-import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class ClassTwentytwo extends JFrame{
 	
@@ -198,8 +203,52 @@ public class ClassTwentytwo extends JFrame{
 //		setDefaultCloseOperation(EXIT_ON_CLOSE);
 //	}
 	
+//	file menu load,hide,exit
+//	load - image hide - imagehide exit - program end
+//	ClassTwentytwo(){
+//		Container c = getContentPane();
+//		JMenuBar j = new JMenuBar();
+//		JMenu jm1 = new JMenu("File");
+//		JMenuItem jmi1 = new JMenuItem("load");
+//		JMenuItem jmi2 = new JMenuItem("hide");
+//		JMenuItem jmi3 = new JMenuItem("exit");
+//		setJMenuBar(j); //메뉴바
+//		j.add(jm1); //메뉴바 1번
+//		jm1.add(jmi1); // 1-1
+//		jm1.add(jmi2); // 1-2
+//		jm1.add(jmi3); // 1-3
+//		
+//		JLabel jl = new JLabel(new ImageIcon("C://Users//soldesk//Desktop//네모.png"));
+//		c.add(jl);
+//		jl.setVisible(false);
+//		
+//		jmi1.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				if(jl.isVisible() == false)
+//					jl.setVisible(true);
+//			}
+//		});
+//		jmi2.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				jl.setVisible(false);
+//			}
+//		});
+//		jmi3.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				System.exit(0);
+//			}
+//		});
+//		
+//		setVisible(true);
+//		setSize(500,400);
+//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+//	}
+	
 	public static void main(String[] args) {
-//		new ClassTwentytwo();
+		new ClassTwentytwo();
 		
 //		JFrame j = new JFrame();
 //		j.setLayout(new FlowLayout());
@@ -242,6 +291,77 @@ public class ClassTwentytwo extends JFrame{
 //		j.setSize(450,300);
 //		j.setVisible(true);
 //		j.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+//		ArrayList<Integer> arr = new ArrayList<>();
+//		arr.add(1);
+//		arr.add(2);
+//		arr.add(3);
+//		arr.add(4);
+//		Iterator<Integer> it = arr.iterator();
+//		int sum=0;
+//		while(it.hasNext()) {
+//			sum+=it.next();
+//		}
+//		System.out.println(sum);
+		
+//		Map m=new HashMap();
+//		m.put("미미", 33);
+//		m.put("히히", 43);
+//		m.put("비비", 23);
+//		System.out.println(m.get("히히"));
+		
+//		Map<Integer,Double> m = new HashMap<>();
+//		m.put(3, 5.5);
+//		m.put(2, 2.5);
+//		m.put(4, 7.5);
+//		Set<Map.Entry<Integer,Double>> s = 
+//				m.entrySet();
+//		for(Map.Entry<Integer,Double> m1 : s) {
+//			System.out.println(m1.getValue());
+//			System.out.println(m1.getKey());
+//			// 엔트리셋을 이용한 방법(전체집합)
+//		}
+		
+//		JFrame j = new JFrame("일단 go");
+//		JPanel jp1 = new JPanel();
+//		JPanel jp2 = new JPanel();
+//		JPanel jp3 = new JPanel();
+//		
+//		jp1.setBackground(Color.LIGHT_GRAY);
+//		jp2.setLayout(new GridLayout(4,4));
+//		jp3.setBackground(Color.green);
+//		
+//		j.add(jp1,BorderLayout.NORTH);
+//		j.add(jp2);
+//		j.add(jp3,BorderLayout.SOUTH);
+//		
+//		JLabel jl1 = new JLabel("입력");
+//		JTextField tf1 = new JTextField(10);
+//		jp1.add(jl1);
+//		jp1.add(tf1);
+//		
+//		JLabel jl2 = new JLabel("결과");
+//		JTextField tf2 = new JTextField(10);
+//		jp3.add(jl2);
+//		jp3.add(tf2);
+//		
+//		String s[] = {"+","-","*","/","계산","CE"};
+//		for(int i=0;i<16;i++) {
+//			JButton jb = new JButton();
+//			if(i<10) {
+//				jb.setText(Integer.toString(i));
+//			}
+//			else {
+//				jb.setText(s[i-10]);
+//			}
+//			jp2.add(jb);
+//		}
+//		
+//		j.setSize(500,350);
+//		j.setVisible(true);
+//		j.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		
 		
 	}
 }

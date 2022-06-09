@@ -1,7 +1,6 @@
 package Practice;
 
-import java.util.HashSet;
-
+import java.util.HashMap;
 ////p392~p393
 //class Powder{
 //	public void doPrinting() {
@@ -144,7 +143,7 @@ import java.util.HashSet;
 //	@Override
 //	public int hashCode() {
 //		return Integer.parseInt(id);
-//		// String -> int 
+//		// String -> int 변환
 //	}
 //	@Override
 //	public boolean equals(Object obj) {
@@ -247,16 +246,58 @@ public class Task {
 //		System.out.println(set);
 		
 ////p447 Q6
-		CarFactory factory = CarFactory.getInstance();
-		Car sonata1 = factory.createCar("연수차");
-		Car sonata2 = factory.createCar("연수차");
-		System.out.println(sonata1 == sonata2); //true
+//		CarFactory factory = CarFactory.getInstance();
+//		// getInstance 싱글톤 패턴 이용?
 		
-		Car avante1 = factory.createCar("승연차");
-		Car avante2 = factory.createCar("승연차");
-		System.out.println(avante1 == avante2); //true
+//		Car sonata1 = factory.createCar("연수차");
+//		// hashcode로 쓸만한게 없음,equals 사용 못함
+//		//createrCar메서드가 String을 한개 받아서 car를 생성
 		
-		System.out.println(sonata1 == avante1); //false
+//		Car sonata2 = factory.createCar("연수차");
+//		System.out.println(sonata1 == sonata2); //true
+//		
+//		Car avante1 = factory.createCar("승연차");
+//		Car avante2 = factory.createCar("승연차");
+//		System.out.println(avante1 == avante2); //true
+//		
+//		System.out.println(sonata1 == avante1); //false
 	}
 
 }
+////p447 Q6
+//class CarFactory{
+//	private static CarFactory instance = new CarFactory();
+//	private CarFactory() {}
+//	public static CarFactory getInstance() {
+//		if(instance == null) {
+//			instance = new CarFactory();
+//		}
+//		return instance;
+//	}
+//	//hashcode로 쓸만한게 없음,equals 사용 못함
+//	//Car생성시 private static int 를 주고 공유해도 3번째 예문에서 탈락
+//	
+//	//Car에서 get,set생성 후 createrCar메서드에서
+//	//String을 set하고 toString()으로 확인하는 계획
+//	//Car객체를 새로생성해서 서로 다른 객체가 같은 이름을 가진 결과
+//	//hashcode,equals가 필요해짐 - 탈락
+//	
+//	HashMap<String, Car> map = new HashMap<>();
+//	//키가 되는 String은 중복허용안되고 값이 되는 car는 중복저장
+//	public Car createCar(String name) {
+//		if(map.containsKey(name)) {
+//			//맵에 이미 이름이 있다면 가져옴
+//			return map.get(name);
+//		}
+//		Car car = new Car();//객체 생성
+//		map.put(name, car);//맵에 이름과 객체 추가
+//		return car;
+//	}
+//}
+//class Car{
+//	String a;
+//	Car(){}
+//	Car(String a){
+//		this.a=a;
+//	}
+//}

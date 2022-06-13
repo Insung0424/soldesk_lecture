@@ -404,21 +404,21 @@ public class ClassSeventeen {
 //		Ab c = new Cd();
 //		System.out.println(c.total(new int[] { 1, 2, 3, 4, 5 }));
 
-		Vector<Integer> v = new Vector<>();
-		v.add(15);
-		v.add(0, 30);
-		v.add(45);
-		v.add(2,60); 
-		v.add(0, 0); 
-		v.add(1,35);
-		v.add(1,50);
-		v.add(2,100);
-		// 이런 줄 알았는데 아니네......
-		// 가장 마지막을 기준으로 순서가 확정됨
-		// 같은 인덱스의 삽입되는 자료가있다면 마지막 명령이
-		// 우선권을 가지고 후순위 자료들은 인덱스가 하나씩 밀림
-		for(int i=0;i<v.size();i++)
-			System.out.println(v.get(i));
+//		Vector<Integer> v = new Vector<>();
+//		v.add(15);
+//		v.add(0, 30);
+//		v.add(45);
+//		v.add(2,60); 
+//		v.add(0, 0); 
+//		v.add(1,35);
+//		v.add(1,50);
+//		v.add(2,100);
+//		// 이런 줄 알았는데 아니네......
+//		// 가장 마지막을 기준으로 순서가 확정됨
+//		// 같은 인덱스의 삽입되는 자료가있다면 마지막 명령이
+//		// 우선권을 가지고 후순위 자료들은 인덱스가 하나씩 밀림
+//		for(int i=0;i<v.size();i++)
+//			System.out.println(v.get(i));
 		
 	}
 //	static void pr(Person p) {

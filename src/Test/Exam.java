@@ -1,5 +1,10 @@
 package Test;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+
 //class JavaTest1 {
 //	JavaTest1(){
 //		Scanner sc = new Scanner(System.in);
@@ -37,48 +42,48 @@ package Test;
 //	}
 //}
 
-////class JavaTest3{
-//		class Num{
-//			int n;
-//			int sum=0;
-//			int max=0;
-//			void add(int n) {
-//				sum += n;
-//				if(max<n) {
-//					max = n;
-//				}
-//			}
-//			public int getSum() {
-//				return sum;
-//			}
-//			public int getMax() {
-//				return max;
-//			}
-//			
-//			public int getSum(int n) {
-//				sum += n;
-//				return sum;
-//			}
-//			
-//			public int getMax(int n) {
-//				if(max<n) {
-//					max = n;
-//				}
-//				return max;
-//			}
-//			
-//			Num(){
-//				this(0);
-//			}
-//			Num(int n){
-//				this.n=n;
-//				sum += n;
-//				if(max<n) {
-//					max = n;
-//				}
-//			}
-//		}
-////}
+//class JavaTest3{
+		class Num{
+			int n;
+			int sum=0;
+			int max=0;
+			void add(int n) {
+				sum += n;
+				if(max<n) {
+					max = n;
+				}
+			}
+			public int getSum() {
+				return sum;
+			}
+			public int getMax() {
+				return max;
+			}
+			
+			public int getSum(int n) {
+				sum += n;
+				return sum;
+			}
+			
+			public int getMax(int n) {
+				if(max<n) {
+					max = n;
+				}
+				return max;
+			}
+			
+			Num(){
+				this(0);
+			}
+			Num(int n){
+				this.n=n;
+				sum += n;
+				if(max<n) {
+					max = n;
+				}
+			}
+		}
+//}
 
 //class JavaTest4{
 //	HashMap<String,Double> hm = new HashMap<>();
@@ -162,10 +167,10 @@ public class Exam {
 //		nb.add(7); nb.add(-1); nb.add(20); nb.add(5); // 4개 숫자를 입력
 //		System.out.println("Sum = " + nb.getSum());   // 4개 숫자의 합계
 //		System.out.println("Max = " + nb.getMax());   // 4개 숫자 중 최대값
-//		
-//		Num nb2 = new Num(2);
-//		System.out.println("Sum = " + nb2.getSum(15));
-//		System.out.println("Max = " + nb2.getMax(13));
+//		System.out.println("======구분선======");
+//		Num nb2 = new Num(8);
+//		System.out.println("Sum = " + nb2.getSum(22));
+//		System.out.println("Max = " + nb2.getMax(12));
 		
 //		JavaTest4 j = new JavaTest4();
 		
@@ -173,63 +178,69 @@ public class Exam {
 		
 //		JavaTest6 j = new JavaTest6();
 		
-//		Scanner sc =new Scanner(System.in);
-//		ArrayList<Worker> aWork = new ArrayList<>();
-//		while(true) {
-//			System.out.println("사원 정보 관리 프로그램");
-//			System.out.println("1. 사원 정보 입력");
-//			System.out.println("2. 사원정보 개별 조회");
-//			System.out.println("3. 프로그램 종료");
-//			int i = sc.nextInt();
-//			
-//			switch (i){
-//			case 1 :
-//				System.out.println("새로운 사원 정보를 입력합니다");
-//				
-//				System.out.println("사번 :");
-//				int iNum = sc.nextInt();
-//				
-//				System.out.println("이름 : ");
-//				String name= sc.next();
-//				
-//				System.out.println("부서 : ");
-//				String part = sc.next();
-//				
-//				sc.nextLine();
-//				System.out.println("주소 : ");
-//				String address = sc.nextLine();
-//				
-//				System.out.println("생일 : ");
-//				String bDate = sc.next();
-//				
-//				aWork.add(new Worker(iNum,name,part,address,bDate));
-//				System.out.println("사원정보가 입력되었다");
-//				break;
-//				
-//			case 2 :
-//				System.out.println("검색하고자 하는 사원의 사번은? 예) 123(입력)");
-//				int id = sc.nextInt();
-//				Iterator<Worker> it = aWork.iterator();
-//				while(it.hasNext()) {
-//					Worker num = it.next();
-//					if(id == num.getId()) {
-//						System.out.println("이름 : "+num.getName());
-//						System.out.println("부서 : "+num.getDepart());
-//						System.out.println("주소 : "+num.getAddress());
-//						System.out.println("생일 : "+num.getbDate());
-//					}
-//					else {
-//						System.out.println("존재하지 않는사원 입니다");
-//					}
-//				}
-//				break;
-//				
-//			case 3 :
-//				System.out.println("프로그램 종료");
-//				return;
-//			}
-//			
-//		}
+		Scanner sc =new Scanner(System.in);
+		ArrayList<Worker> aWork = new ArrayList<>();
+		while(true) {
+			System.out.println("사원 정보 관리 프로그램");
+			System.out.println("1. 사원 정보 입력");
+			System.out.println("2. 사원정보 개별 조회");
+			System.out.println("3. 프로그램 종료");
+			int i = sc.nextInt();
+			
+			switch (i){
+			case 1 :
+				System.out.println("새로운 사원 정보를 입력합니다");
+				
+				System.out.println("사번 :");
+				int iNum = sc.nextInt();
+				
+				System.out.println("이름 : ");
+				String name= sc.next();
+				
+				System.out.println("부서 : ");
+				String part = sc.next();
+				
+				sc.nextLine();
+				System.out.println("주소 : ");
+				String address = sc.nextLine();
+				
+				System.out.println("생일 : ");
+				String bDate = sc.next();
+				
+				aWork.add(new Worker(iNum,name,part,address,bDate));
+				//사원이 계속 추가될 것을 생각해서 입력받은 값을 변수로 하는 
+				//Worker 객체를 ArrayList에 추가한다
+				//set을 이용할 경우 기본생성자로 객체를 생성하게되며 
+				//생성된 객체마다 객체명을 지정해야 하므로
+				//기본생성자는 private로 잠근다
+				System.out.println("사원정보가 입력되었다");
+				break;
+				
+			case 2 :
+				System.out.println("검색하고자 하는 사원의 사번은? 예) 123(입력)");
+				int id = sc.nextInt();
+				Iterator<Worker> it = aWork.iterator();
+				while(it.hasNext()) {
+					Worker num = it.next();
+					if(id == num.getId()) {
+						System.out.println("이름 : "+num.getName());
+						System.out.println("부서 : "+num.getDepart());
+						System.out.println("주소 : "+num.getAddress());
+						System.out.println("생일 : "+num.getbDate());
+					}
+					else {
+						System.out.println("존재하지 않는사원 입니다");
+					}
+				}
+				break;
+				
+			case 3 :
+				System.out.println("프로그램 종료");
+				System.exit(0); //jvm종료
+				return; //함수종료
+			}
+			
+		}
 	}
 
 }

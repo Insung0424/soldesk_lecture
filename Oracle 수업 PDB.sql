@@ -37,14 +37,13 @@ where stu_dept in('기계','컴퓨터정보');
 
 --16. 학생들의 학과, 학년 중복을 제거하고 검색하라.
 select DISTINCT
-
 stu_dept, stu_grade from student;
 
 --17. 학생들의 학과, 반 중복을 제거하고 검색하라.
 select DISTINCT stu_dept,stu_class from student;
 
 --18. 학생들의 체중을 5만큼 증가시킨 값을 검색하라.
-select stu_weight+5 as from student;
+select stu_weight+5 as 몸무게플러스 from student;
 
 --19. 학생들의 체중을 5만큼 감소시킨 값을 검색하라.
 select stu_weight-5 from student;
@@ -94,7 +93,7 @@ where stu_dept in '기계';
 --30. 컴퓨터정보 학생들의 학번, 이름을 검색하라.
 select stu_no,stu_name from student
 where stu_dept in '컴퓨터정보';
-?
+
 --31. 남학생의 이름을 검색하라.
 select stu_name,stu_gender from student 
 where stu_gender in 'm';
@@ -148,7 +147,7 @@ from student order by stu_dept, wei desc;
 
 select round(345.678,1)
 from dual;--(dual) 이라는 테이블이 오라클에 존재하며 
---round함수(반올림)도 존재함 (n, m) m:소숫점 나타날 위치
+--round함수(반올림)이다 (n, m) m:소숫점 나타날 위치
 
 select round(345.678,-1)
 from dual; -- 350이 나옴 1의 자리에서 반올림이 실행되기때문

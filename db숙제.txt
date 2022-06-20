@@ -1,0 +1,29 @@
+create table customer(
+C_code varchar2(4),
+C_name varchar2(30),
+C_ceo varchar2(12),
+C_addr varchar2(100),
+C_phone varchar2(13));
+
+create table product(
+P_code char(3),
+P_name varchar2(30),
+P_cost number,
+P_group varchar2(30));
+
+create table stock(
+P_code char(3),
+S_qty number,
+S_lastdate date);
+
+desc customer;
+desc product;
+desc stock;
+
+insert into product values ('202','유선마우스',180000,'마우스');
+insert into product values ('301','무선마우스',8000,'키보드');
+insert into product values ('302','유선키보드',22000,'키보드');
+insert into product values ('401','2채널 스피커',10000,'스피커');
+insert into product values ('402','5.1채널 스피커',120000,'스피커');
+
+select * from product;

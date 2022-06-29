@@ -1,12 +1,10 @@
 package SolDesk;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.awt.Container;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 
 //public class ClassTwentythree /*implements Runnable*/{
@@ -24,37 +22,37 @@ import javax.swing.JFrame;
 //		}
 //		System.exit(0);
 //	}
-//class Th extends Thread{
-////	1. 쓰레드가실행될때화면에1초단위로정수를출력하게끔만들어라 
-////	 정수0부터시작하여프레임에정수를문자열로변경해서넣고try문안에서
-////	 1초씩정지하게끔만들어라예외발생하면쓰레드는종료된다(return)
-//	JLabel jlabel;
-//	JLabel jlabel1;
-//	public Th(JLabel j,JLabel jlabel1) {
-//		this.jlabel=j;
-//		this.jlabel1 = jlabel1;
-//	}
-//	@Override
-//	public void run() {
-//		int i = 0;
-//		int m = 0;
-//		while(true) {
-//			jlabel.setText(Integer.toString(i));
-//			i++;
-//			if(i == 60) {
-//				i = 0;
-//				m++;
-//				jlabel1.setText(Integer.toString(m));
-//			}
-//			try {
-//				Thread.sleep(1000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//				return;
-//			}
-//		}
-//	}
-//}
+class Th extends Thread{
+//	1. 쓰레드가실행될때화면에1초단위로정수를출력하게끔만들어라 
+//	 정수0부터시작하여프레임에정수를문자열로변경해서넣고try문안에서
+//	 1초씩정지하게끔만들어라예외발생하면쓰레드는종료된다(return)
+	JLabel jlabel;
+	JLabel jlabel1;
+	public Th(JLabel j,JLabel jlabel1) {
+		this.jlabel=j;
+		this.jlabel1 = jlabel1;
+	}
+	@Override
+	public void run() {
+		int i = 0;
+		int m = 0;
+		while(true) {
+			jlabel.setText(Integer.toString(i));
+			i++;
+			if(i == 60) {
+				i = 0;
+				m++;
+				jlabel1.setText(Integer.toString(m));
+			}
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				return;
+			}
+		}
+	}
+}
 
 ////1
 //class Number{
@@ -66,19 +64,19 @@ import javax.swing.JFrame;
 //	}
 //}
 public class ClassTwentythree extends JFrame{
-//	ClassTwentythree(){
-//		Container c=getContentPane();
-//	    c.setLayout(new FlowLayout());
-//	    JLabel j=new JLabel();
-//	    c.add(j);
-//	    JLabel j1=new JLabel();
-//	    c.add(j1);
-//	    Th t=new Th(j,j1);   
-//	    t.start(); 
-//	    setSize(300,300);
-//	    setVisible(true);
-//	    setDefaultCloseOperation(EXIT_ON_CLOSE);
-//	}
+	ClassTwentythree(){
+		Container c=getContentPane();
+	    c.setLayout(new FlowLayout());
+	    JLabel j=new JLabel();
+	    c.add(j);
+	    JLabel j1=new JLabel();
+	    c.add(j1);
+	    Th t=new Th(j,j1);   
+	    t.start(); 
+	    setSize(300,300);
+	    setVisible(true);
+	    setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
 	
 //	ClassTwentythree(){
 //		Container c = getContentPane();
@@ -241,42 +239,42 @@ public class ClassTwentythree extends JFrame{
 //			System.out.println(d);
 //		}
 		
-		Sh sh = new Sh();
-		Student th1 = new Student("Jack",sh);
-		Student th2 = new Student("Tom",sh);
-		th1.start();
-//		try {
-//			th1.join();
-//		}catch(Exception e) {}
-		th2.start();
+//		Sh sh = new Sh();
+//		Student th1 = new Student("Jack",sh);
+//		Student th2 = new Student("Tom",sh);
+//		th1.start();
+////		try {
+////			th1.join();
+////		}catch(Exception e) {}
+//		th2.start();
 		
 	}
 
 }
-class Sh{
-	private int num=0;
-	
-	public synchronized void add() {
-		int n = num;
-		Thread.yield();
-		n+=10;
-		num=n;
-		System.out.println(num);
-	}
-}
-class Student extends Thread{
-	String a;
-	Sh sh;
-	public Student(String a, Sh sh) {
-		this.a = a;
-		this.sh = sh;
-	}
-	public void run() {
-		for(int i=1;i<6;i++) {
-			try {
-				sh.add();
-				sleep(500);
-			} catch (InterruptedException e) {}
-		}
-	}
-}
+//class Sh{
+//	private int num=0;
+//	
+//	public synchronized void add() {
+//		int n = num;
+//		Thread.yield();
+//		n+=10;
+//		num=n;
+//		System.out.println(num);
+//	}
+//}
+//class Student extends Thread{
+//	String a;
+//	Sh sh;
+//	public Student(String a, Sh sh) {
+//		this.a = a;
+//		this.sh = sh;
+//	}
+//	public void run() {
+//		for(int i=1;i<6;i++) {
+//			try {
+//				sh.add();
+//				sleep(500);
+//			} catch (InterruptedException e) {}
+//		}
+//	}
+//}

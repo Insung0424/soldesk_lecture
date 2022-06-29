@@ -38,7 +38,7 @@ public class JdbcCon {
 		// DB와 이클립스를 연결하는 객체
 		
 		
-		url="jdbc:oracle:thin:@dbsoldeskteam1_high?TNS_ADMIN=C://ora/Wallet_DBSOLDESKTEAM1";
+		url="jdbc:oracle:thin:@dbsoldeskteam1_high?TNS_ADMIN=/ora/Wallet_DBSOLDESKTEAM1";
 		/*
 		 *  url 설정법 
 		 *  jdbc:oracle:thin:@dbsoldeskteam1_high?TNS_ADMIN=
@@ -61,11 +61,10 @@ public class JdbcCon {
 			System.out.println("good");
 			
 			
-//			String a = "select LO_ROUND,NUM1,NUM2 from copy_lotto_table "
-//					+ "where lo_round=30";
+			String a = "select LO_ROUND,NUM1,NUM2 from copy_lotto_table "
+					+ "where lo_round=30";
 			
-			String a = "SELECT m_id FROM copy_member_signup "
-					+ "WHERE m_id = 'admin123'";
+//			String a1 = "select LO_ROUND,NUM1,NUM2 from copy_lotto_table";
 			/*
 			 * 기본적인 이클립스와 클라우드DB와 연동은 확인됬습니다
 			 * 
@@ -77,11 +76,15 @@ public class JdbcCon {
 			PreparedStatement psmt = conn.prepareStatement(a);
 			ResultSet rs = psmt.executeQuery();
 			
+			int a1 = 0;
+			int n1 = 0;
+			int n2 = 0;
 			while(rs.next()) {
-				String id= rs.getString(1);
-//				String pw= rs.getString(2);
-				System.out.println(id);
+				a1 = rs.getInt(1);
+				n1 = rs.getInt(2);
+				n2 = rs.getInt(3);
 			}
+			System.out.println(a1+" "+n1+" "+n2);
 		}
 		catch(Exception e) {
 			e.printStackTrace();

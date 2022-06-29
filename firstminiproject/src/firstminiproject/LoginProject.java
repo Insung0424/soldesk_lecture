@@ -1,4 +1,4 @@
-package firstminiproject;
+package firstMiniProject;
 
 import java.awt.CardLayout;
 import java.awt.Font;
@@ -15,7 +15,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -81,12 +83,18 @@ class LoginPanel extends JPanel implements ActionListener {
 			this.lp = lp;
 			
 			mainPanel = new JPanel();
-			mainPanel.setLayout(new GridLayout(5, 1));
+			mainPanel.setLayout(new GridLayout(6, 1));
 
 			JPanel centerPanel = new JPanel();
 			JLabel loginLabel = new JLabel("로그인 화면");
 			loginLabel.setFont(font);
 			centerPanel.add(loginLabel);
+			
+			JComboBox combo = new JComboBox();
+			combo.setModel(new DefaultComboBoxModel(
+					new String[] {"기간 설정","전체기간","최근 한달","최근 3개월","최근 6개월","최근 1년"}));
+			JPanel comPanel = new JPanel();
+			comPanel.add(combo);
 
 			JPanel userPanel = new JPanel();
 
@@ -128,6 +136,7 @@ class LoginPanel extends JPanel implements ActionListener {
 			loginPanel.add(signupButton);
 
 			mainPanel.add(centerPanel);
+			mainPanel.add(comPanel);
 			mainPanel.add(userPanel);
 			mainPanel.add(gridBagidInfo);
 			mainPanel.add(loginPanel);
@@ -135,55 +144,44 @@ class LoginPanel extends JPanel implements ActionListener {
 
 
 			loginButton.addActionListener(this);
+			
+			combo.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JComboBox JC = (JComboBox) e.getSource();
+					
+					switch (JC.getSelectedItem().toString()) {
+					case "전체기간" :
+						new AllTimeCountRecord(lp);
+						break;
+					case "최근 한달" :
+						new OneMonthCountRecord(lp);
+						break;
+					case "최근 3개월" :
+						new ThreeMonthCountRecord(lp);
+						break;
+					case "최근 6개월" :
+						new SixMonthCountRecord(lp);
+						break;
+					case "최근 1년" :
+						new OneYearCountRecord(lp);
+						break;
+					}
+					
+				}
+			});
 
 			signupButton.addActionListener(new ActionListener() {
 					// 회원가입으로 넘어가기
 				@Override
 				public void actionPerformed(ActionEvent e) {
 //					lp.card.next(lp.cardPanel);
-			//====================아직 메인 창이 없어서 회원가입 버튼에 임시로 생성==========================
-					try {
-						String count = "SELECT lotto_num, SUM(CNT) AS CNT"
-								+ "  FROM ( SELECT num1 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num1"
-								+ "          UNION ALL"
-								+ "         SELECT num2 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num2"
-								+ "          UNION ALL"
-								+ "          SELECT num3 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num3"
-								+ "          UNION ALL"
-								+ "          SELECT num4 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num4"
-								+ "          UNION ALL"
-								+ "          SELECT num5 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num5"
-								+ "          UNION ALL"
-								+ "          SELECT num6 lotto_num, COUNT(*) CNT"
-								+ "           FROM copy_lotto_table"
-								+ "          GROUP BY num6 )"
-								+ " GROUP BY lotto_num"
-								+ " ORDER BY 2 DESC";
-					
-						Connection conn = lp.getConnection();
-						Statement stmt = conn.createStatement();
-					
-						ResultSet rset = stmt.executeQuery(count);
-						while(rset.next()) {
-							int i=rset.getInt(1);
-							int j=rset.getInt(2);
-							System.out.println("숫자"+ i+" 가 "+ "기간동안 " + "나온 횟수"+ j);
-							
-						}
-					}catch(Exception er) {
-						er.printStackTrace();
-					}
+
 					//========================================================================
+					
+//					new Sleep();
+					//=============== 선생님 컨셉 ===========================
 					
 				}
 				

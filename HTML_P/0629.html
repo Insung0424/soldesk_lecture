@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <style>
+        p{
+            color: burlywood;
+            font-size: 50px;
+        }
+
+        span{
+            background-color: darkcyan;
+        }
+    </style> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="0629.css"> -->
+    <!-- <style>
+        @import url(0629.css);
+    </style> -->
+    <!-- <link rel="stylesheet" href="0629.css">
+    <style>
+        p{
+            color: chocolate; font-size: 10px;
+        }
+    </style> -->
+
+    <!-- <style>
+
+        .main {
+            background-color: aliceblue;
+        }
+        .study {
+            color: aquamarine;
+        }
+        .uu {
+            color: brown;
+        }
+    </style> -->
+
+    <!-- <style>
+        p   {
+            font-size: 12px;
+        }
+        .t2 {
+            color: blue;
+        }
+        .p1 {
+            color: blue;
+        }
+    </style> -->
+
+    <!-- <style>
+        .main {
+            background-color: aliceblue;
+        }
+        /* div > strong 같은 의미 */
+        div strong { 
+            background-color: yellowgreen;
+        }
+        #list {
+            background-color: yellow;
+        }
+        #list span {
+            color: fuchsia;
+        }
+        h2,li{color: tomato;}
+        .f{color: red;}
+        ul em {
+            color: blue;
+        }
+        /* list hangover : 리스트에 마우스를 올렸을때 색을 바꿈 */
+        li:hover{
+            background-color: goldenrod;
+        }
+        h2::first-letter{
+            color: aqua;
+        }
+
+    </style> -->
+
+<!-- <style>
+    div{
+        color: blue;
+    }
+
+    .d1{
+        color: orange; font-size: 20px;
+    }
+</style> -->
+
+<!-- <style>
+    h1{
+        color: brown;
+    }
+    .dm{
+        background-color: pink; color: blue;
+    }
+    label {
+        color: black;
+    }
+    .dl{
+        background-color: coral;
+    }
+</style> -->
+
+<!-- <style>
+    div{
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+</style> -->
+
+<!-- <style>
+    h3{
+        text-align: right;
+    }
+    span{
+        text-decoration: line-through; /*취소선*/
+    }
+    .p1{
+        text-indent: 3em; /*3글자 들여쓰기*/
+        text-align: justify;/*양쪽정렬*/
+    }
+    .p2{
+        text-indent: 1em; /*1글자 들여쓰기*/
+        text-align: center;/*중앙정렬*/
+    }
+    strong{
+        text-decoration: overline; /*글자 위에 선*/
+    }
+
+</style> -->
+
+<!-- <style>
+    .d1{
+        background-color: black; color: white;
+    }
+    .s1{
+        color: brown; font-weight: bold;
+    }
+    .p1{
+        color: blue; font-weight: bold;
+    }
+    .s2{
+        color: blue; 
+    }
+    .p2{
+        color: blue;
+    }
+</style> -->
+
+<!-- <link rel="stylesheet" href="st.css">
+<style>
+    @import url(sty.css);
+</style> -->
+
+<!-- <style>
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    h4{
+        font: italic bold 50px Times, serif;
+    }
+</style> -->
+
+</head>
+<body class="main">
+    <!-- <h1>성적</h1>
+    <hr>
+    <table border="1">
+        <caption>학생 성적 표</caption>
+        <tr><th>이름</th><th>영어</th><th>수학</th></tr>
+        <tr><td>홍길동</td><td>100</td><td>95</td></tr>
+        <tr><td>이길동</td><td>90</td><td>80</td></tr>
+        <tr><td>박길동</td><td>90</td><td>100</td></tr>
+        <tr><th>평균</th><th>93.3</th><th>91.6</th></tr>
+    </table>
+
+    <h1>버튼</h1>
+    <hr>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button><br>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+
+    <h1>로그인 폼</h1>
+    <hr>
+    <fieldset>
+        <legend>Login</legend>
+        Username <input type="text">
+        Password <input type="password">
+    </fieldset>
+
+    <h1>회원 정보를 입력해라.</h1>
+    <hr>
+    <fieldset>
+        <legend>회원정보</legend>
+        이메일: <input type="email"><br>
+        홈페이지: <input type="text"><br>
+        전화번호: <input type="tel">
+    </fieldset>
+    연락처: &phone; 010-1234-5678 -->
+
+    <!-- <table border="1">
+        <caption><h1>교재비 동의서</h1></caption>
+        <tr><td>성명</td><td><input type="text"></td><td>생년월일</td><td><input type="text"></td></tr>
+        <tr><td>개강일자</td><td><input type="date"></td><td>담당자</td><td><input type="text" placeholder="꼭 작성"></td></tr>
+        <tr><td>연락처</td><td colspan="3"><input type="tel"></td>></tr>
+        <tr><td>수강과목</td><td colspan="3"><input type="text"></td></tr>
+        <tr><td colspan="4"><textarea cols="70" rows="10">(주)솔데스크에서 실시하는...</textarea></td></tr>
+    </table> -->
+
+    <!-- month: <input type="month" value="2022-06"><br> -->
+    <!--month는 달만 출력됨-->
+    <!-- date: <input type="date" value="2022-06-29"><br> -->
+    <!--date는 년월일 출력됨-->
+    <!-- time: <input type="time" value="10:37"><br> -->
+    <!--time는 시간이 출력됨-->
+    
+    <!-- <table>
+        <tr><td>파티 <input type="date"></td></tr>
+        <tr><td>파티장소 <input type="time"></td></tr>
+        <tr><td>파티장소 <input type="text"></td></tr>
+        <tr><td>파티진행시간 <input type="number" min="7" max="10" step="1"></td></tr>
+        <tr><td>온도설정 <input type="range" min="10" max="30" list="temp">
+        <datalist>
+            <option value="12"></option>
+            <option value="22"></option>
+            <option value="28"></option>
+        </datalist>
+        </td></tr>
+    </table> -->
+    
+    <!-- <form>
+        <fieldset>
+            <legend>정보</legend>
+        
+        이메일:<input type="email" placeholder="id@"><br>
+        홈페이지: <input type="url" placeholder="http://"><br>
+        검색어: <input type="search" placeholder="검색어">
+        <input type="submit" value="제출"><br>
+        </fieldset>
+    </form> -->
+
+<!-- <form>
+    <fieldset>
+        <legend>등록 정보</legend>
+        <ul>
+            <li>참여인원<small>(최대 10명)</small>
+                <input type="number" min="1" max="10" step="1" value="1">
+            </li>
+            <li>지원물품<small>(1인당 5개)</small>
+                <input type="number" min="0" max="50" step="5" value="0">
+            </li>
+            <li>희망 단계<small>(하,중,상)</small>
+                <input type="range" min="1" max="3" list="s">
+                <datalist>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                </datalist>
+            </li>
+        </ul>
+    </fieldset>
+</form> -->
+
+<!-- <p>나는 <span>개발</span>하는 것이 그냥그렇다</p> -->
+    
+    <!-- <p>우리는 503반이다</p>
+    <p>오늘은 수요일이다</p>
+    <p style="color: brown;">지금은 3교시이다</p>
+    <p style="color: magenta; font-size: 20px;">점심은 뭐먹지</p> -->
+
+    <!-- <p>hi</p>
+    <p style="font-size: 30px;">hello</p> -->
+
+    <!-- <div>
+        <div class="study">오늘 배울 것들</div>
+        <ul class="uu">
+            <li>java</li>
+            <li>db</li>
+            <li>html5</li>
+        </ul>
+    </div>
+
+    <div>
+        내일까지
+    </div> -->
+
+
+    <!-- <h1>블루베리에 관한 연구</h1>
+
+    <div>
+
+        <div class="t2"><h3>블루베리와 항산화 효능</h3></div>
+            
+        <dd><p class="p1">블루베리는 항산화제인 안토시아닌과 폴리페놀을 다량 포함하고 있습니다.</p></dd>
+        <dd><p>매사츄세츠 보스톤에 있는 USDA 노화에 관한 인류 영양 연구센터 (the USDA Human Nutrition Research Center on Aging) 의 자료에 의하면 블루베리는 과일 중에서 가장 항산화 작용이 뛰어난 과일이라고 합니다.</p></dd>
+        
+        <div><h3><dt>블루베리와 노화</dt></h3></div>
+
+        <dd><p>USDA 인류 영양 연구센터(the USDA Human Nutrition Research Center) 실험실에서 신경과학자들은 쥐들에게 블루베리를 먹임으로써 노화에 의한 인지능력의 손실을 예방해 준다는 사실을 발견하였습니다.</p></dd>
+        
+    </div> -->
+
+    <!-- <h2>셀렉터</h2>
+    <div>
+        <div>6월 <strong>학습내용</strong></div>
+        <ul id="list">
+            <li><span>html5</span></li>
+            <li><em>css</em></li>
+            <li>javascript</li>
+        </ul>
+        <div>과락은 F!</div>
+    </div> -->
+
+    <!-- <h1 style="text-align: center;">CSS</h1>
+
+    <div class="d1">웹 문서의 디자인과 내용을 분리합니다</div>
+    <br>
+    <div>웹 표준에 의한 웹 문서는 디자인과 내용이 분리되어 있습니다.</div>
+    <br>
+    <div>내용은 HTML을 이용해 구성하고, 디자인은 CSS를 이용해 꾸미는 것입니다.</div> -->
+
+    <!-- <h1 style="text-align: center;">설문지</h1>
+
+    <p>소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다</p>
+    <hr>
+
+    <div class="dm">
+
+        학년
+        <label> 
+        <input type="radio" name="grade" value="1">1학년
+        <input type="radio" name="grade" value="2">2학년
+        <input type="radio" name="grade" value="3">3학년
+        <input type="radio" name="grade" value="4">4학년</label>
+        <br><br>
+
+        성별 
+        <label>
+        <input type="radio" name="gender" value="1">남
+        <input type="radio" name="gender" value="2">여</label>
+        <br><br>
+
+        관심분야
+        <select name="관심분야">
+            <option value="1">모바일 소프트웨어</option>
+            <option value="1">임베디드 소프트웨어</option>
+        </select>
+        <br><br>
+
+        진로(다중선택)
+        <label>
+        <input type="checkbox" value="1">개발
+        <input type="checkbox" value="2">기획
+        <input type="checkbox" value="3">영업
+        <input type="checkbox" value="4">창업</label>
+        <br><br>
+
+        남기고싶은말
+        <textarea cols="20" rows="3"></textarea>
+        <br><br>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="dl">Copyright &copy; 2021 by </div> -->
+
+    <!-- <div style="background-color: red;">red</div>
+    <div style="background-color: orange;">orange</div>
+    <div style="background-color: yellow;">yellow</div>
+    <div style="background-color: green;">green</div> -->
+
+    <!-- <h3>텍스트기사</h3>
+    <p class="p1">
+        남부 보스턴에 사는 윌 헌팅(맷 데이먼)은 천재적인 기억력과
+        수리 능력을 가진 청년이다. 수학만 잘하는 건 아니고 
+        기억력이 뛰어나 <span>박학다식하여 역사와 법률</span>에도 
+        조예가 있고 예술적 통찰력까지 갖고 있다. 
+        말 그대로 <strong>'무엇이든 될 수 있는'</strong> 먼치킨 만능 천재.
+    </p>
+    <p class="p2">
+        하지만 몇번에 거친 <span>입양과 파양</span>
+        그리고 위탁부모에게 받은 학대로 인하여 양아치로 성장했다. 
+    </p> -->
+
+    <!-- 회사 소개
+    <div class="d1">"사람을 도와주는 책"</div>
+    <p>나는 <span class="s1">'사람들에게 도움을 주는 개발자 입니다.</span></p>
+    <p>IT 기술과 실생활에 접목시킨 개발을 하고 있으며 브랜드로 출간하고 있습니다.</p>
+    <p class="p1">나의 미션</p>
+    <p>사람에게 <span class="s2">도움</span>을 주는 책</p>
+    <p>열심히 사는 사람들에게 도움이 되고 싶습니다.</p>
+    <p class="p2">개발의 지름길을 만들어 빠르게 원하는 곳으로 가도록 도와주는 개발자. 이익을 얻을 수 있도록 도움이 되는 책을 만들고 싶습니다.</p> -->
+
+
+    <!-- <h1 style="color: blue;">웹 프로그래밍</h1>
+    <hr>
+    <details>
+        <summary>웹의 목적</summary>
+        <p style="color: magenta;">웹의 기본 목적은 한 컴퓨터에서 만든 문서를 다른 컴퓨터에서
+            쉽게 볼 수 있도록 하는 것이다.
+        </p>
+    </details>
+
+    <details>
+        <summary>왜 Web인가?</summary>
+        <p style="color: magenta;">전 세계의 컴퓨터들은 인터넷으로 거미줄처럼
+            연결하고 웹 문서를 쉽게 주고 받을 수 있다.
+        </p>
+    </details>
+
+    <details>
+        <summary>웹 페이지를 구성하는 3가지 요소</summary>
+        <ul>
+            <li>HTML- 문서의 구조와 내용</li>
+            <li>CSS(Casading Style Sheet) - 문서의 모양</li>
+            <li>Javacript - 행동 및 응용 프로그램</li>
+        </ul>
+    </details>
+
+    <h1>도형 서식 폼 만들기</h1>
+    <hr>
+    <fieldset>
+        <legend>도형 서식 입력</legend>
+        <p>선종류 <select name="k">
+            <option value="1">얇음</option>
+            <option value="2">중간</option>
+            <option value="3">굵음</option>
+        </select></p>
+        <p>선두께 <input type="number" min="0" max="100"> 선색 <input type="color"></p>
+        <p>투명도(0~100): <input type="range" min="0" max="100" step="1"></p>
+    </fieldset>
+
+    <p style="color: blue; text-align: center;">test</p>
+    <p class = "test1">test1</p>
+    <p class = "test2">test2</p> -->
+    
+    <!-- <h4>제목</h4>
+    <p style="font-weight: 900;">글자 굵기 900</p>
+    <p style="font-weight: 100;">글자 굵기 100</p>
+    <p style="font-style: italic;">이탤릭 스타일</p>
+    <p style="font-style: oblique;">옵리큐 스타일</p>
+    <p>현재 글자 크기의 <span style="font-size: 2em;">2배</span></p> -->
+
+    <!-- <h1>토마토(Tomato)</h1>
+
+    <p>[<a href="http://www.naver.com" 
+        target="_blank"
+        style="text-decoration: none;">외부 링크</a>]</p>
+
+    <p>토마토는 비타민A, C가 풍부한 <span style="text-decoration: line-through;">과일이다.</span> 
+        채소다. 칼륨과 같은 각종 미네랄은 혈액의 산성도를 낮추는
+         역할을 해주며 혈압을 내리고 혈관을 튼튼하게 해준다. 
+         토마토에 들어있는 피코펜이라는 성분은 뛰어난 
+         항암 작용을 보이며 잘 알려져 있듯이 블루베리와 함께 
+         대표적인 항산화 음식이기도 하다.</p> -->
+
+</body>
+</html>

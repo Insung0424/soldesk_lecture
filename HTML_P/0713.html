@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <Script>
+    function on() {
+      let n = document.getElementsByName("aa");
+      let sum=0;
+      for(let i=0;i<n.length;i++){
+        if(n[i].checked === true){
+          sum+=parseInt(n[i].value);
+        }
+      }
+      alert(sum);
+    }
+  </Script>
+</head>
+
+<body>
+  <form>
+    <input type="checkbox" name="aa" value="4000">아메리카노(4000)
+    <input type="checkbox" name="aa" value="4500">카페라떼(4500)
+    <input type="checkbox" name="aa" value="5000">카푸치노(5000)
+    <input type="button" value="확인" onclick="on()">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      display: inline-block;
+      width: 150px;
+    }
+  </style>
+  <script>
+    const a = ["+","-","*","/"];
+    let div = document.getElementsByTagName('div');
+    let input = document.getElementsByTagName('input');
+    let span = document.getElementsByTagName('span');
+
+    window.onload=function(){
+      set();
+      count();
+    }
+    
+    function set(){
+      for(let i=0;i<div.length;i++){
+        const n1 = parseInt(Math.random()*100);
+        const n2 = parseInt(Math.random()*100);
+        const r = parseInt(Math.random()*4);
+        div[i].textContent = n1 + a[r] + n2;
+        div[i].style.textDecoration = "none";
+      }
+      count();
+    }
+    function zero(){
+      let cnt = 0;
+      for(let i=0;i<input.length;i++){
+        if(input[i].value == eval(div[i].textContent)){
+          cnt++;
+        }
+        else{
+          div[i].style.textDecoration = "line-through";
+        }
+      }
+      span[1].textContent = cnt;
+    }
+    function count(){
+      let cd = 10;
+      let countdown = document.getElementById('countdown');
+      countdown.textContent = cd;
+      
+      let down=setInterval(function(){
+        if(cd==0){
+          zero();
+          clearInterval(down);// 자신안에서 자신을 변수명으로 사용가능
+        }
+        else{
+          countdown.textContent = cd--;
+        }
+      },1000);
+    }
+
+  </script>
+</head>
+<body>
+  <h1>문제</h1>
+  <h2>시간 <span id="countdown"></span></h2>
+  <hr>
+  <div></div>
+  <input type="text" name="" id=""><br>
+  <div></div>
+  <input type="text" name="" id=""><br>
+  <div></div>
+  <input type="text" name="" id=""><br>
+  <div></div>
+  <input type="text" name="" id=""><br>
+
+  <button onclick="set()">다시</button>
+  <span id="check"></span>
+</body>
+</html>

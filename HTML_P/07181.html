@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1">
+    <h1>설문지</h1>
+    <br>
+    <p>사고 싶은 핸드폰 종류</p>
+  </div>
+  <hr>
+  <div id="div2">
+    <br>
+    갖고있는 폰 종류 
+    <input type="radio" name="r1">아이폰
+    <input type="radio" name="r1">삼성
+    <input type="radio" name="r1">LG
+    <input type="radio" name="r1">그 외
+    <br>
+    <br>
+    성별
+    <input type="radio" name="gen">남
+    <input type="radio" name="gen">여
+    <br>
+    <br>
+    구매시기
+    <select>
+      <option value="2017~2020">2017~2020</option>
+      <option value="~2013~2016">~2013~2016</option>
+    </select>
+    <br>
+    <br>
+    통신사
+    <input type="checkbox" name="T">SKT
+    <input type="checkbox" name="T">KT
+    <input type="checkbox" name="T">LG
+    <input type="checkbox" name="T">그 외
+    <br>
+    <br>
+    남기고싶은말
+    <textarea name="" id="" cols="20" rows="3"></textarea>
+    <br>
+    <br>
+    <button onclick="c()">색변경</button>
+    <button onclick="r()">원래색</button>
+  </div>
+  <script>
+    function c() {
+      document.getElementById('div1').style.backgroundColor="yellow";
+      document.getElementById('div2').style.backgroundColor="lightblue";
+    }
+    function r() {
+      document.getElementById('div1').style.backgroundColor="white";
+      document.getElementById('div2').style.backgroundColor="white";
+    }
+  </script>
+</body>
+</html>

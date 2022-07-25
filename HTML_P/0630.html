@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- <style>
+        div.box {
+            
+            background-color: bisque;
+            border-style: solid;
+            border-color: aqua;
+            padding: 30px;
+
+
+        }
+
+        span{
+            background-color: tomato;
+        }
+
+    </style> -->
+
+    <!-- <style>
+        p{
+            /* border-width: 3px; */
+            /* border-color: black; */
+            /* border-style: dotted; */
+
+            border-left-color: black;
+            border-left-style: dotted;
+            border-left-width: 10px;
+            /* 기본 border 크기에 왼쪽만 10px이 됨 */
+
+            border: 10px dotted blue;
+            /* 한번에 작성 */
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            background-color: bisque;
+            border: 5px dotted red;
+            padding : 30px;
+            margin : 40px;
+        }
+        img{
+            border-radius: 30px;
+        }
+    </style> -->
+
+    <!-- <style>
+        h2{
+            background-color: black;
+            color: white;
+            padding: 5px;
+            margin: 0px;
+        }
+        h3{
+            color: red;
+            text-align: center;
+        }
+        span{
+            color: blue;
+        }
+
+        p{
+            text-align: center;
+            font-weight: bold;
+        }
+        div{
+            border : 1px solid gray;
+        }
+    </style> -->
+
+    <!-- <style>
+        p{
+            background-color: brown;
+            width: 300px;
+            padding: 30px;
+        }
+        #a{
+            border-radius: 50px;
+        }
+        #b{
+            border-radius: 0px 20px 40px 60px;
+        }
+        #c{
+            border-radius: 0px 20px 40px;
+            /* 값을 하나 생략시 대각선으로 마주보는 꼭짓점이 같은값을 가짐 */
+        }
+        #d{
+            border-radius: 0px 20px;
+        }
+        #e{
+            border-radius: 50px;
+            border-style: dotted;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            width: 200px;
+            height: 100px;
+            font-size: 10px;
+            background-color: bisque;
+            background-size: 100px 100px;
+            background-image: url(/Users/soldesk/Desktop/LOTTO/파일\ 경로.PNG);
+            background-repeat: repeat-y;
+            background-position: center center;
+        }
+    </style> -->
+
+    <!-- <style>
+        /* .a{
+            text-shadow: 3px 3px;
+        }
+        .b{
+            text-shadow: 3px 3px red;
+        }
+        .c{
+            text-shadow: 3px 3px 5px pink;
+        } */
+
+        .a{
+            box-shadow: 10px 10px red;
+        }
+        .b{
+            box-shadow: 10px 10px 5px blue;
+        }
+        div{
+            background-image: url(/Users/soldesk/Desktop/LOTTO/파일\ 경로.PNG);
+            padding: 30px;
+            width: 100px;
+            height: 40px;
+            border:10px solid pink;
+        }
+    </style> -->
+
+    <!-- <style>
+        span{
+            border: 1px solid black;
+            width: 400px;
+            height: 700px;
+            margin: 30px; /*인라인요소는 상하의 마진값은 가질 수 없다*/
+        }
+        div{
+            border: 1px solid deeppink;
+            width: 400px;
+            height: 100px;
+            margin: 5px;
+        }
+    </style> -->
+
+    <!-- <style>
+        span { 
+            display : block;
+            width : 100px;
+            height : 60px;
+            border: 1px solid black;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            border: 2px solid palevioletred;
+            color: cornflowerblue;
+            background-color: pink;
+        }
+        span{
+            border: 3px dotted darkorchid;
+            background-color: yellow;
+        }
+    </style> -->
+
+    <!-- <style>
+        .a{
+            background-color: purple;
+        }
+        .b{
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        .c{
+            border: 3px solid skyblue;
+            border-radius: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .d{
+            border: 3px solid green;
+            border-radius: 20px 0px 20px 0px;
+        }
+        .dog{
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        div dt{
+            font-weight: bold; 
+            color: purple;
+        }
+    </style> -->
+
+    <!-- <style>
+        .a1{
+            font-family: "맑은고딕" , "돋움";
+            width: 500px;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0.2);
+            border: 1px solid blue;
+        }
+        span{
+            font-weight: bold;
+        }
+        p{
+            line-height: 25px;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid tomato;
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+        #a:hover{
+            position: relative;
+            left: 30px;
+            top: 30px;
+            background-color: yellowgreen;
+            font-weight: bold;
+        }
+        #b:hover{
+            position: relative;
+            right: 30px;
+            bottom: 10px;
+            background-color: blueviolet;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            display: inline-block;
+            position: absolute;
+            /* 위치가 설정된 조상을 기준으로 정해진다 */
+            border: 1px solid salmon;
+            width: 15px;
+            height: 20px;
+            top: 50px;
+        }
+    </style> -->
+
+    <!-- <style>
+        .p2{
+            background-color: yellow;
+            color: black;
+            font-size: 15px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .center{
+            text-align: center;
+            position: relative;
+            color: blue;
+            background-color: yellow;
+            width: 70px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        div .h3{
+            color: yellowgreen;
+        }
+        #span1{
+            color: red;
+            font-weight: bold;
+        }
+    </style> -->
+
+</head>
+<body>
+    <!-- <div class="box">
+        <span>divdivdiv</span>
+    </div> -->
+
+    <!-- <p>박스모델</p> -->
+
+    <!-- <div>
+        <img src="/Users/soldesk/Desktop/LOTTO/캡처.PNG" alt="없음">
+    </div> -->
+
+    <!-- <p style="border:3px solid green;">solid</p>
+    <p style="border:3px none green;">solid</p>
+    <p style="border:3px hidden green;">solid</p>
+    <p style="border:3px dotted green;">solid</p>
+    <p style="border:3px double green;">solid</p>
+    <p style="border:3px groove green;">solid</p>
+    <p style="border:3px dashed green;">solid</p>
+    <p style="border:3px ridge green;">solid</p>
+    <p style="border:3px inset green;">solid</p>
+    <p style="border:3px outset green;">solid</p> -->
+
+    <!-- <div style="border: 1px solid black;">
+        <div style="background-color: black; color: white; padding: 1px;">
+            <p style="font-size: 20px;"><b>확인하세요</b></p>
+        </div>
+
+        <div style="text-align: center; border-bottom: 1px solid black; padding: 5px;">
+            <p style="color: red; margin: 5px; font-size: 20px; font-weight: bold;">주문 및 배송</p>
+            <p style="font-weight: bold;"><span style="color: blue;">오후 2시이전</span>주문건은 당일 발송합니다.<br>
+            2시 이후 주문건은 다음날 발송합니다.(주말 제외)</p>
+        </div>
+
+        <div  style="text-align: center; border-bottom: 1px groove gainsboro; padding: 5px;">
+            <p style="color: red; margin: 5px; font-size: 20px; font-weight: bold;">교환 및 환불</p>
+            <p style="font-weight: bold;">불만족시 <span style="color: blue;">100% 환불</span>해 드립니다.<br>
+            고객센터로 전화주세요</p>
+        </div>
+
+        <div  style="text-align: center; padding:5px;">
+            <p style="color: red; margin: 5px; font-size: 20px; font-weight: bold; padding:5px">고객센터</p>
+            <p style="font-weight: bold;"><b>0000-0000</b><br>
+            <small>상담시간 : 오전 9시 ~ 오후 6시 (토/일,공휴일 휴무)</small></p>
+        </div>
+    </div> -->
+
+    <!-- <h2>확인하세요</h2>
+    <div>
+        <h3>주문 및 배송</h3>
+        <p><span>오후 2시이전</span>주문건은 당일 발송합니다.<br>
+        2시 이후 주문건은 다음날 발송합니다.(주말 제외)</p>
+        <hr>
+    
+        <h3>교환 및 환불</h3>
+        <p>불만족시 100% 환불해 드립니다.<br>
+        고객센터로 전화주세요</p>
+        <hr>
+
+        <h3>고객센터</h3>
+        <p>0000-0000 <br>
+        <small>상담시간 : 오전 9시 ~ 오후 6시 (토/일,공휴일 휴무)</small></p>
+    </div> -->
+
+    <!-- <p id="a">one</p>
+    <p id="b">one</p>
+    <p id="c">one</p>
+    <p id="d">one</p>
+    <p id="e">one</p> -->
+
+    <!-- <div>한국에서는 인스턴트 식품으로 만든 일본 라멘에서 영향을 받아 처음부터 인스턴트 식품으로 출시했다. 
+        1960년대에 삼양라면을 원조로 하여 인스턴트 라면이 발달했다. </div> -->
+
+        <!-- <div class="a">Shadow</div>
+        <div class="b">Shadow</div>
+        <div class="c">Shadow</div> -->
+
+    <!-- <p style="cursor: help;">도움말</p>
+    <p style="cursor: pointer;">pointer</p>   
+    <p style="cursor: progress;">progress</p>   
+    <p style="cursor: n-resize;">n-resize</p>   
+    <p style="cursor: crosshair;">crosshair</p> -->
+    
+    <!-- <span>인라인 구성요소 확인 작업</span>
+    <span>인라인 구성요소 확인 작업</span>
+    <span>인라인 구성요소 확인 작업</span>
+
+    <div>블록의 구성요소 확인 작업</div>
+    <div>블록의 구성요소 확인 작업</div> -->
+
+    <!-- <div>
+        <span>block span</span>과	
+        <span>block span</span>입니다.
+    </div> -->
+    
+    <!-- 나는<div style="display: inline;">inline DIV</div>입니다
+    나는<div style="display: inline-block;">inline-block DIV</div>입니다
+    나는<div>오늘  <span style="display: block;">block DIV</span></div>입니다 -->
+
+    <!-- <div class="a"><span style="display: inline-block; font-weight: bold; padding: 10px 80px 10px 80px; font-size: 20px;">애완견 종류</span><span>애완견 종류 입양하기 건강돌보기 더불어살기</span></div>
+
+    <div class="b">
+        <p  class="dog">활달한 강아지</p>
+        <dt>요크셔 테리어
+            <dd>생기있고 활달한 성질을 가지고 있으며 자신보다 몸집이 큰 개나 집에 들어온 침입자를 겁내는 일이 없어 좋은 번견이고 우리나라 최고의의 가정견으로 자리 잡고 있다.</dd>
+        </dt>
+        <dt>말티즈
+            <dd>애정이 많고, 충실하며 활발한 성격을 소유하고있다. 이 종은 1급 가정견으로 요크셔테리어와 함께 우리나라 최고의 가정견으로 자리잡고 있다.</dd>
+        </dt>
+        <dt>포메 라이언
+            <dd>활기차고 명랑한 개로 유명하고, 걷는 모습이 우아하다.충실하고 우호적인 성격이 가장 먼저 거론된다.</dd>
+        </dt>
+        <dt>골든 리트리버
+            <dd>이 견종은 충성심이 강하고 성격이 활달하여 어린아이나 여성이 상대하기에 적합한 견종이다.참을성 또한 강하여 현재는실내에서도 많이 길러지고 있다.</dd>
+        </dt>
+    </div>
+
+    <div class="c">
+        <p class="dog">활달한 강아지</p>
+        <dt>요크셔 테리어
+            <dd>생기있고 활달한 성질을 가지고 있으며 자신보다 몸집이 큰 개나 집에 들어온 침입자를 겁내는 일이 없어 좋은 번견이고 우리나라 최고의의 가정견으로 자리 잡고 있다.</dd>
+        </dt>
+        <dt>말티즈
+            <dd>애정이 많고, 충실하며 활발한 성격을 소유하고있다. 이 종은 1급 가정견으로 요크셔테리어와 함께 우리나라 최고의 가정견으로 자리잡고 있다.</dd>
+        </dt>
+        <dt>포메 라이언
+            <dd>활기차고 명랑한 개로 유명하고, 걷는 모습이 우아하다.충실하고 우호적인 성격이 가장 먼저 거론된다.</dd>
+        </dt>
+        <dt>골든 리트리버
+            <dd>이 견종은 충성심이 강하고 성격이 활달하여 어린아이나 여성이 상대하기에 적합한 견종이다.참을성 또한 강하여 현재는실내에서도 많이 길러지고 있다.</dd>
+        </dt>
+    </div>
+
+    <div class="d">
+        <p class="dog">활달한 강아지</p>
+        <dt>요크셔 테리어
+            <dd>생기있고 활달한 성질을 가지고 있으며 자신보다 몸집이 큰 개나 집에 들어온 침입자를 겁내는 일이 없어 좋은 번견이고 우리나라 최고의의 가정견으로 자리 잡고 있다.</dd>
+        </dt>
+        <dt>말티즈
+            <dd>애정이 많고, 충실하며 활발한 성격을 소유하고있다. 이 종은 1급 가정견으로 요크셔테리어와 함께 우리나라 최고의 가정견으로 자리잡고 있다.</dd>
+        </dt>
+        <dt>포메 라이언
+            <dd>활기차고 명랑한 개로 유명하고, 걷는 모습이 우아하다.충실하고 우호적인 성격이 가장 먼저 거론된다.</dd>
+        </dt>
+        <dt>골든 리트리버
+            <dd>이 견종은 충성심이 강하고 성격이 활달하여 어린아이나 여성이 상대하기에 적합한 견종이다.참을성 또한 강하여 현재는실내에서도 많이 길러지고 있다.</dd>
+        </dt>
+    </div> -->
+
+    <!-- <div class="a1">
+        <h3>웹 디자인 트렌드를 따라잡는 비법 대공개!</h3>
+        <p>
+            그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 
+            이제 모바일, 태블릿, PC 등 멀티 디바이스에 한 번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로<span> 코딩을 이용한 웹 디자인</span>이다.
+        </p>
+    </div> -->
+
+    <!-- <div>c</div>
+    <div id="a">s</div>
+    <div>s</div>
+    <div id="b">3</div>
+    <p>간격확인용</p> -->
+
+    <!-- <div style="left: 30px; top: 30px;">C</div>
+    <div style="left: 30px; top: 0px;">S</div>
+    <div style="left: 0px; top: 30px;">S</div> -->
+
+
+    <!-- <div style="background-color: lightblue; color:deeppink">
+        <h3 style="text-align: right;">홍길동</h3>
+
+        <hr>
+
+        <p>저는 개발자 홍길동입니다. 음악을 들으면서 책읽기를
+            좋아합니다. <mark style="background-color: aquamarine;">웹 개발</mark>과 
+            <mark style="background-color: aquamarine;">서버 개발일을</mark> 무척 좋아합니다.
+        </p>
+
+    </div>
+
+    <h2>텍스트, 폰트</h2>
+    <hr>
+    <p class="p2">
+        yellow 바탕색에 Black색의 "Lucida Console" 폰트로
+        15px 크기이고 <span style="font-size: 1.5em;">저는 이보다 1.5배 큽니다.</span>
+    </p>
+
+    <div style="background-color: aliceblue;">
+        <h3 class="h3">
+            제목</h3>
+        <hr>
+        <p class="center">center</p>
+        <p style="color:yellowgreen; text-indent: 50px;">
+            <span style="font-style: italic; color: black;">네 힘으로</span>안될 일에 
+            눈을 감고 
+            <span id="span1">지나치게 앞 일에</span> 매여
+            <span id="span1">지금 가진것을</span>잃지는 마라.
+        </p>
+    </div>
+
+
+    <h3>색 이름과 코드</h3>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>코드</th>
+            <th>색</th>
+            <th>이름</th>
+            <th>코드</th>
+            <th>색</th>
+        </tr>
+        <tr>
+            <td>Brown</td>
+            <td>#A52A2A</td>
+            <td style="background-color: #A52A2A;"></td>
+            <td>DeepSkyBlue</td>
+            <td>#00BFFF</td>
+            <td style="background-color: #00BFFF;"></td>
+        </tr>
+        <tr>
+            <td>Blueviolet</td>
+            <td>#8A2BE2</td>
+            <td style="background-color: #8A2BE2;"></td>
+            <td>Gold</td>
+            <td>#FFD700</td>
+            <td style="background-color: #FFD700;"></td>
+        </tr>
+        <tr>
+            <td>DarkOrange</td>
+            <td>#FF8C00</td>
+            <td style="background-color: #FF8C00;"></td>
+            <td>OliveDrab</td>
+            <td>#6B8E23</td>
+            <td style="background-color: #6B8E23;"></td>
+        </tr>
+
+    </table>
+
+
+    <h4>목차</h4>
+    <br>
+    <ol>
+        <li>다음</li>
+        <li><a href="#1">네이버</a></li>
+    </ol>
+    <br>
+    <p>daum</p>
+    <div style="padding: 100px;">공간 벌려놓기</div>
+    <p id="1"><a href="http://naver.com" target="_balck">naver</a></p> -->
+
+        
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <style>
+        .a{
+           width: 300px;
+           border: 1px solid gray; 
+        }
+        .a img{
+            float: right;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid red;
+        }
+    </style> -->
+
+    <!-- <style>
+        .a, .b{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .a img{
+            padding: 5px;
+        }
+        .b img{
+            display: block;
+            padding: 5px;
+        }
+    </style> -->
+
+    <!-- <style>
+        ul li{
+            display: inline-block;
+        }
+        ul li a{
+            text-decoration: none;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            display: inline-block;
+            width: 250px;
+            height: 100px;
+            margin: 15px;
+            border: 3px dashed;
+        }
+        #a{
+            border-color: red;
+        }
+        #b{
+            border-color: blue;
+        }
+    </style> -->
+
+    <!-- <style>
+        div{
+            width: 200px;
+            height: 400px;
+            background-color: #ff6a00;
+            margin: 0 auto; /*정중앙 배치*/
+        }
+    </style> -->
+
+    <!-- <style>
+        .div1{
+            background-color: darksalmon;
+            padding-bottom: 30px;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+        }
+        .div1 #p1{
+            color: blue;
+        }
+        #d1{
+            color: red;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .a{
+            background-color: yellow;
+            color: blue;
+        }
+        ul{
+            color: pink;
+        }
+        ul:hover{
+            color: violet;
+        }
+        .div2 a{
+            text-decoration: none;
+        }
+        .div2 a:hover{
+            text-decoration: underline;
+        }
+    </style> -->
+
+    <!-- <style>
+        #a{
+            background-color: chocolate;
+        }
+        #a ul{
+            margin: 0px;
+            padding: 0px;
+            width: 500px;
+        }
+        #a ul li{
+            display: inline;
+            padding: 0px 20px; /*top,bottom=0px left,right=0px*/
+            list-style-type: none; /* 마커 삭제*/
+        }
+        #a ul li a{
+            text-decoration: none;
+            color: black;
+        }
+        #a ul li a:hover{
+            color: white;
+        }
+    </style> -->
+
+    <!-- <style>
+        th{
+            height: 40px;        
+            width: 100px;
+        }
+        td{
+            height: 40px;        
+            width: 100px; 
+        }
+        table{
+            border: 1px solid blue;
+            border-collapse: collapse;
+            /* border 합치기 */
+        }
+        th,td{
+            border: 1px dotted green;
+        }
+        thead{
+            background-color: yellow;
+            color: black;
+        }
+        tfoot th{
+            height: 30px;
+        }
+        td, tfoot th{
+            border-bottom: 1px solid gray;
+        }
+        tr:hover{
+            background-color: pink;
+        }
+        tbody tr:nth-child(even){
+            background-color: palegreen;
+        }
+    </style> -->
+
+    <!-- <style>
+        table{
+            border: 2px solid blue;
+            width: 400px;
+            height: 200px;
+            text-align: right;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px dotted green;
+            padding: 10px;
+        }
+    </style> -->
+
+    <!-- <style>
+        input[type=text]{
+            color: red;
+        }
+        input:hover, textarea:hover{
+            background-color: pink;
+        }
+        input[type=email]:focus, input[type=text]:focus{
+            font-size: 140%;
+        }
+        label{
+            display: block;
+            padding: 10px;
+        }
+        label span{
+            float: left;
+            width: 80px;
+            padding: 10px;
+        }
+    </style> -->
+
+    <!-- <style>
+        label{
+            /* label을 어디까지 묶을 것인가가 중요하다 */
+            /* input 값은 어차피 인라인으로 한라인에 
+            있을수가 있다 br로 줄을 나누는게 좋다 */
+            text-align: right; 
+            float: left;
+            width: 120px;
+            padding-right: 5px;
+        }
+        input[type=button]{
+            margin-top: 10px;   
+            width: 100%;
+        }
+    </style> -->
+
+    <!-- <style>
+        img{
+            margin: 20px;
+            border: 15px solid blue;
+            padding: 5px;
+        }
+        p{
+            display: inline;
+            padding-right: 5px;
+        }
+        label{
+            display: inline-block;
+            margin-top: 3px;
+        }
+    </style> -->
+
+    <!-- <style>
+        #center{
+            width: 600px;
+            margin: 0 auto;
+        }
+        legend{
+            color: purple;
+            font-weight: bold;
+        }
+        b{
+            width: 120px;
+            float: left;
+            margin-left: 40px;
+        }
+        label{
+            display: block;
+            padding-top: 10px;
+        }
+        input[type=checkbox]{
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+        #div1{
+            text-align: center;
+        }
+    </style> -->
+
+    <!-- <style>
+        @keyframes amgerna{
+            from{
+                font-size: 500%;
+            }
+            to{
+                font-size: 100%;
+            }
+        }
+        h1{
+            animation-name: amgerna;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <div class="a">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+        (서울=연합뉴스) 박상돈 기자 = 우리나라의 올해 상반기 무역적자가 100억달러를 웃돌며 상반기 기준 역대 최대 규모를 기록한 것으로 나타났다.
+        산업통상자원부는 이 같은 내용의 상반기 수출입 통계를 1일 발표했다.
+        상반기 수출은 지난해 동기보다 15.6% 증가한 3천503억달러, 수입은 26.2% 늘어난 3천606억달러였다.
+        이에 따라 무역수지는 103억달러(약 13조원) 적자를 기록했다.
+        이는 상반기 기준 역대 최대 규모다. 기존의 상반기 역대 최대 무역수지 적자 기록은 1997년의 91억6천만달러였다.
+        상·하반기를 통틀어 반기 기준으로는 1996년 하반기의 125억5천만달러 적자가 최대 규모다. 
+        수출액은 올해 들어 모든 월이 해당 월의 역대 1위를 차지했다. 이 중 3월과 5월은 각각 월간 기준 1위, 2위를 기록했다.
+    </div> -->
+
+    <!-- <div class="a">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+    </div>
+
+    <div class="b">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+        <img src="/Users/soldesk/Desktop/LOTTO/메인페이지2.png" width="100" height="100" alt="없음">
+    </div> -->
+
+    <!-- <ul>
+        <li><a href="#">애완견 종류</a></li>
+        <li><a href="#">입양하기</a></li>
+        <li><a href="#">건강돌보기</a></li>
+        <li><a href="#">더불어살기</a></li>
+    </ul> -->
+
+    <!-- <div id="a"></div>
+    <div id="b"></div> -->
+
+    <!-- <div></div> -->
+
+    <!-- <div class="div1">
+        <h2>셀렉터</h2>
+        <hr>
+        <p id="p1">css</p>
+        <div id="d1">경고!!</div>
+        <p class="a">폭염주의보</p>
+    </div>
+    <div class="div2">
+        <h3>링크 꾸미기</h3>
+        <p>불릿색은 pink색에 밑줄 없는 링크, 
+            마우스를 올리면 밑줄과 불릿 violet 색으로 변경
+        </p>
+        <hr>
+        <ul>
+            <li><a href="">네이버</a></li>
+            <li><a href="">구글</a></li>
+        </ul>
+    </div> -->
+
+    <!-- <div id="a">
+        <ul>
+            <li><a href="#">Burger1</a></li>
+            <li><a href="#">Burger2</a></li>
+            <li><a href="#">amugerna</a></li>
+            <li><a href="#">Burger3</a></li>
+            <li><a href="#">Burger4</a></li>
+        </ul>
+    </div> -->
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>홍길동</td>
+                <td>100</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>김길동</td>
+                <td>85</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합</th>
+                <th>185</th>
+                <th>195</th>
+            </tr>
+        </tfoot>
+    </table> -->
+
+    <!-- <table>
+        <caption>2015 국민 독서 실태</caption>
+        <tr>
+            <th>구분</th>
+            <th>성인</th>
+            <th>학생</th>
+        </tr>
+        <tr>
+            <th>독서율</th>
+            <td>65.3%</td>
+            <td>94.9%</td>
+        </tr>
+        <tr>
+            <th>독서율</th>
+            <td>65.3%</td>
+            <td>94.9%</td>
+        </tr>
+        <tr>
+            <th>독서율</th>
+            <td>65.3%</td>
+            <td>94.9%</td>
+        </tr>
+    </table> -->
+
+    <!-- <form>
+        <label><span>Name</span>
+        <input type="text" placeholder="son"><br></label>
+
+        <label><span>Email</span>
+        <input type="email" placeholder="son@super.com"><br></label>
+
+        <label><span>Name</span>
+        <textarea placeholder="msg"></textarea></label>
+
+        <label><input type="submit" value="제출"></label>
+
+    </form> -->
+
+    <!-- <h1>회원 가입</h1>
+    <fieldset>
+        <legend>로그인 정보</legend>
+        <label for="a">아이디</label>
+            <input type="text" id="a"><br>
+        <label for="a">비밀번호</label>
+            <input type="password" id="a"><br>
+        <label for="a">비밀번호 확인</label>
+            <input type="password" id="a"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>개인정보</legend>
+        <label for="a">이름</label>
+            <input type="text" id="a"><br>
+        <label for="a">메일 주소</label>
+            <input type="email" id="a"><br>
+        <label for="a">연락처</label>
+            <input type="tel" id="a"><br>
+        <label for="a">블로그/홈페이지</label>
+            <input type="url" id="a"><br>
+    </fieldset>
+
+    <input type="button" value="가입하기"> -->
+
+    <!-- <h3>이미지 테두리</h3>
+    <hr>
+    <img src="/Users/soldesk/Desktop/sponge.PNG" alt="none">
+
+    <h2>생일 파티</h2>
+    <hr>
+    <label><p>생일</p><input type="date" value="2020-08-16"></label><br>
+    <label><p>시간</p><input type="time"></label><br>
+    <label><p>장소</p><input type="text"></label> -->
+
+    <!-- <div id="center">
+        <h1>상품 주문서</h1>
+        <div>
+            <fieldset style="height: 100px;">
+                <legend>개인정보</legend>
+                <label><b>이름</b><input type="text" placeholder="여백없이 입력"><br></label>
+                <label><b>연락처</b><input type="tel" placeholder="연락가능한 번호"></label>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset style="height: 190px;">
+                <legend>배송지정보</legend>
+                <label><b>주소</b><input type="text" style="width: 350px;"><br></label>
+                <label><b>전화번호</b><input type="tel"><br></label>
+                <label><b>메 모</b><textarea cols="50" rows="3"></textarea></label>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset style="height: 160px;">
+                <legend>주문정보</legend>
+                <input type="checkbox">과테말라 안티구아 <small>(100g)</small>
+                <input type="number"  min="0" max="5" value="0">개
+                <br>
+                <input type="checkbox">인도네시아 만델링 <small>(100g)</small>
+                <input type="number"  min="0" max="5" value="0">개
+                <br>
+                <input type="checkbox">탐라는도다(블렌딩) <small>(100g)</small>
+                <input type="number"  min="0" max="5" value="0">개
+            </fieldset>
+        </div>
+        <div id="div1">
+            <input type="button" value="주문하기">
+            <input type="button" value="다시 작성">
+        </div>
+    </div> -->
+
+
+    <!-- <h1>CSS!!!!!!!</h1>
+    <h3>글자가 3초동안 
+        500%에서 시작해 100%로 바뀐다. 
+        무한반복시켜라</h3> -->
+
+
+</body>
+</html>

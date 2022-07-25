@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  </script>
+  <style>
+    span,
+    .span {
+      display: inline-block;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body onload="on()">
+  <h1>문제는 자동으로 생성되며 10초가 지나면 자동 채점</h1>
+
+  남은 시간 <span id="span">0</span>
+  <hr>
+  <span name="span"></span><input type="text" name="p"><br>
+  <span name="span"></span><input type="text" name="p"><br>
+  <span name="span"></span><input type="text" name="p"><br>
+  <span name="span"></span><input type="text" name="p"><br>
+
+  <input type="button" value="다시" onclick="on()">
+  <span id="s"></span>
+  <script>
+    function on() {
+      let span = document.getElementsByName('span');
+      for (let i = 0; i < span.length; i++) {
+        const r1 = parseInt(Math.random() * 100 + 1);
+        const r2 = parseInt(Math.random() * 100 + 1);
+        const r3 = parseInt(Math.random() * 4);
+        const arr = ["+", "/", "*", "-"];
+        span[i].textContent = r1 + arr[r3] + r2;
+      }
+    }
+
+
+    let span = document.getElementsByName('span');
+    let p = document.getElementsByName('p');
+    let c = document.getElementById('s');
+    let span1 = document.getElementById('span');
+    let num = 10;
+    setInterval(function () {
+      span1.textContent = num--;
+      if (num < 0) {
+        let count = 0;
+        for (let i = 0; i < span.length; i++) {
+          if (eval(span[i].textContent) !== eval(p[i].textContent)) {
+            span[i].style.textDecoration = "line-through";
+          } else {
+            count++;
+          }
+        }
+        c.textContent = count;
+        num = 10;
+        on();
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>

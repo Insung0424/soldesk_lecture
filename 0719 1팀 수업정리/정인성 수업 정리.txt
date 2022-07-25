@@ -1,0 +1,171 @@
+BoardBean.java
+	board테이블에 입력하기 위한 객체
+
+
+BoardForm.jsp
+	실행시 맨처음 출력되는 페이지
+	form 에서 submit버튼을 누르면 BoardWriteform.jsp로
+	입력한 값을 보내준다 
+	값만 전달되고 실제 보여지는 페이지는 다르다
+	전체글보기를 누르면 저장된 글목록을 보여주는 
+	BoardList.jsp로 이동
+
+
+BoardWriteform.jsp
+	form을 통해 받아온 값을 utf-8로 인코딩하고
+	jsp:usebean으로 BoardBean객체를 생성한뒤
+	BoaraBeanDAO 의 메소드를 이용 데이터를 삽입한다
+	그 후 실제로 보여지는 BoardList.jsp 페이지로 이동한다
+
+
+BoardList.jsp 
+
+	pageSize 는 한페이지내에서 최대로 보여줄 글의 개수이고 10으로 초기화
+	
+	pageNum 은 이전 페이지에서 넘어온 pageNum값을 받으며 null 이라면
+		1로 초기화한다
+	
+	count 는 db 테이블에 저장된 들의 전체 개수
+	
+	number 는 해당 페이지에서 시작될 글의 번호
+	
+	BoardBeanDAO 의 메소드 getAllCount()를 이용
+	테이블의 모든 글의 수가 몇인지 count에 저장
+	
+	currentPage 는 pageNum값을 숫자로 변환 받는다
+	
+	startRow 는 현재페이지에서 보여줄 글의 시작번호
+	
+	endRow 는 현재페이지에서 보여줄 글의 끝번호
+
+	BoardBeanDAO 의 메소드 getBoard()를 이용
+	벡터에 받아온 값들을 저장한다
+	
+	테이블 생성 후 
+	for문을 이용 행마다 벡터로 가져온 값들을 
+	출력하고 연관글(리플,댓글)일경우 들여쓰기를 한다
+
+	테이블종료 이후 
+	페이지목록과 이전,다음 하이퍼링크를 만든다
+	이전,다음은 페이지목록이 11페이지 이상부터 생성되며
+	
+	pageCount 는 총 페이지 수 이고 
+	 전체글수/페이지내의 글의수 + (전체글수와 페이지내글수의 나머지 == 0? 0:1)
+	
+	startPage 는 1로 초기화하고 if문으로 
+		currentPage가 10으로 나눴을 때 나머지가 0이 아닐때 시작페이지는 1
+		0이라면 11,21... 과 같이 시작페이지가 초기화된다
+
+	pageBlock 은 페이지 번호를 10개씩 끊기위한 값
+	
+	endPage 는 현재 페이지에서 보는 페이지번호의 끝값
+
+	for문을 통해 페이지 목록을 제공한다
+
+
+BoardIn.jsp
+	BoardList에서 생성된 글 목록에서 글의 제목을 
+	누르면 이동되는 페이지
+	BoardBeanDAO에서 제공하는 oneBoard(num)를 사용
+	테이블에 글의 내용을 보여준다
+	하단에 댓글쓰기,수정,삭제,목록 버튼이있다
+
+	
+ReWriteForm.jsp
+	BoardIn에서 댓글쓰기를 누르면 이동되는 페이지
+	이전 페이지에서 ref,re_step,re_level 값을 
+	받아오며 hidden으로 다음페이지로 보낸다
+	해당페이지에서 댓글을 작성해서 ReWriteProc.jsp 로 보낸다
+
+
+ReWriteProc.jsp
+	ReWriteForm에서 받아온 값들을 useBean을 사용해서
+	값을 set한 뒤 reWriteBoard() 메소드를 사용해서
+	글의 내용을 db에 삽입한다
+	완료되면 전체 글 목록BoardList.jsp 로 이동
+
+
+UpdateForm.jsp
+	BoardIn에서 수정버튼을 누르면 이동되는 페이지
+	
+	oneupdateBoard()를 사용해서 글 한개의 정보를 읽어와서
+	보여준뒤 제목과 내용을 input으로 다시 입력할 수있게 제공한다
+	확인용 password필드도 제공하며 hidden으로 숨긴 num값을
+	UpdateProc.jsp 로 보낸다
+
+
+UpdateProc.jsp
+	화면은 제공하지않고 비밀번호를 확인 후 
+	비밀번호가 틀렸다면 이전페이지로 돌아가고
+	맞았다면 updateBoard() 를 통해 이전페이지에서 
+	입력받은 제목과 내용으로 글을 수정한다
+
+	
+DeleteForm.jsp
+	BoardIn에서 삭제버튼을 누르면 이동되는 페이지
+	업데이트와 같이 선택한 글의 정보를 불러오며
+	테이블에는 확인용 password필드가 제공된다
+	hidden 값으로 num값을 전달하며
+	삭제를 누르면 DeleteProc.jsp로 이동한다
+
+
+DeleteProc.jsp
+	DeleteForm.jsp에서 보낸 num,password값을 받은뒤
+	db와 연결해서 비밀번호를 확인 후 
+	비밀번호가 틀렸다면 이전페이지로 돌아가고
+	맞았다면 deleteBoard() 를 통해 데이터를 삭제한다
+
+
+BoardBeanDAO.java
+	DB작업을 위한 java 클래스
+
+	getcon() : 서버설정에서 직접 db를 연결하므로 void
+	
+	insertBoard() : 게시판에 새글을 작성하기위한 메소드
+		리플이나 답장,댓글 등 새로 작성한 글들과의 차별점을 위해 사용하는 값 3가지
+		ref,re_step,re_level 을 초기화한다
+		새글을 등록하기 위해 가장 큰 ref 값을 받아오고
+		insert 문을 실행해서 테이블에 값을 입력한다
+
+	
+ 	allBoard(int start, int end) :
+		글목록을 만드는데 사용하기 위해 벡터와		
+		제네릭에 BoardBean을 담아서 반환
+		
+		쿼리문은 ref를 내림차순 정렬후 re_step을 올림차순으로 한 Board테이블을 A로 만든뒤
+		A테이블에서 rownum과 모든정보를 찾고 그중 Rnum>= start 이고 Rnum<=end 인 db값만 가져온다
+		
+		쿼리문으로 가져온 결과값을 BoardBean 객체로 생성하고
+		벡터값에 추가하며 
+		벡터를 return 한다
+
+	getAllCount() : 전체 글 수를 세는 메소드
+
+
+	oneBoard(int num) : 글을 조회하는 메소드
+		읽을 글의 조회수를 1증가시키며
+		변수로 입력된 num과 같은 글의 정보를 가져온다
+
+	
+	reWriteBoard(BoardBean b) : 댓글을 쓸 때 사용하는 메소드
+		re_level은 연관되는 글들의 작성순서로 
+		기존에 연관된 글들중 최상위 글을 제외한
+		글들의 re_level을 먼저 1씩 증가시켜 순서를 뒤로 밀리게하고
+		작성한 댓글의 내용과 부모가된글의 re_step과 re_level을 받아 
+		작성한글의 step과 level값을 1씩증가시켜 가장 최신값으로 db에 삽입한다
+
+	oneupdateBoard(int num) : 
+		변수로 받은 num값에 해당하는 글 정보 읽어오는 메소드
+
+			
+	getPass(int num) : 
+		변수로 받은 num값과 같은 글의 비밀번호를 가져오는 메소드
+
+	updateBoard(BoardBean b) : 
+		글 제목과 글 내용을 수정하는 메소드
+		BoardBean을 변수로 받아서 입력된 내용을 
+		get으로 가져와서 db에 업데이트 해준다
+
+	deleteBoard(int num) : 
+		변수로 받은 num값으로 board테이블에서
+		데이터를 삭제하는 메소드

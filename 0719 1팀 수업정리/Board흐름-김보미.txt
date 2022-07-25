@@ -1,0 +1,95 @@
+﻿1. BoardBean.java
+    - DB의 정보와 동일하게 변수를 지정하고, private 으로 선언한다
+    - 외부에서 데이터에 접근할 수 있도록 setter, getter 메서드를 public으로 선언한다
+
+2. BoardDAO
+    - DB연결과 DB의 CRUD를 작성
+    - getCon(): DB 연결은 커넥션 풀을 사용하여 서버의 부하를 줄인다
+    - insertBoard(BoardBean ): 자바빈을 받아와 게시글을 등록하는 메서드
+
+    -- ref:글묶음(게시글의 작성자 기준으로 나뉜다)
+    -- re_step:새글과 댓글 구분
+    -- re_level:게시글의 계층. 원글:1 댓글2 인데, 새 댓글이 달리면 기존댓글이 3이 되고, 새 댓글이 2가 된다.
+
+    -- ref가 큰 값(원글 최신글)이 먼저 뜬다. 그 다음, re_level(최신 댓글)이 작은 값이 먼저 뜬다.
+    -- 새 글이 등록 될때마다 ref를 1씩 증가하여 등록한다
+    -- 게시글을 등록하면 글번호는 시퀀스를 통해서 자동 증가하도록 등록한다.
+
+    - allBoard(): 게시글 전체 목록을 DB에서 가져와 벡터에 저장해서 리턴한다.
+
+    - getAllCount(): 게시글의 전체 개수를 리턴한다
+
+    - oneBoard(): 
+    -- 게시글을 클릭하면 받아온 글번호와 같은 게시글의 조회수를 증가 시킨다.
+    -- 받아온 글번호를 기준으로 DB를 검색하고 결과를 자바빈에 저장한다
+    -- 저장한 자바빈을 반환한다
+
+    - reWriteBoard():
+    -- ref: 원글과 동일
+    -- re_step: 원문의 댓글이기 대문에 +1
+    -- re_level: 원문을 제외한 글들의 re_level값은 +1, 
+	지금 등록한 댓글은 원문의 re_level보다 1큰 값으로 저장
+    -- re_leve 값을 조정하고 댓글을 DB에 저장하는 쿼리문을 실행한다
+
+    - getPass(): 받아온 글 번호를 기준으로 DB에 저장된 비밀번호를 반환한다
+    - oneUpdateBoard(): 수정 쿼리문을 실행한다
+    - deleteBoard(): 받아온 글 번호를 기준으로 해당 글을 삭제하는 쿼리문을 실행한다
+
+
+3. BoardForm.jsp
+    - 새 글을 등록 하는 페이지
+    - 입력 받은 데이터들을 가지고 form action 을 통해서 BoardWriteForm.jsp 으로 이동한다.
+    - 하단의 글전체목록 버튼은 onclick의 location.href 를 통해서 BoardList.jsp 로 이동되도록 설정한다.
+
+4. BoardWriteForm.jsp
+    - 받아온 데이터의 한글 깨짐을 방지하기 위해서 request.setCharacterEncoding("UTF-8")로 설정
+    - jsp:useBean을 통해서 자바빈 객체를 생성하고 jsp파일과 자바빈과 연결
+    - jsp:setProperty로 BoardForm 페이지의 폼에서 받아온 매개변수 값을 자바빈객체의 프로퍼티 값으로 저장하고 자바빈 클래스에 데이터를 매핑한다.
+    - DAO 객체를 생성하여 insertBoard 메서드를 호출한다.
+    - 등록 성공 후 sendRedirect 를 통해서 게시글전체목록 페이지로 이동시킨다.
+
+5. BoardList.jsp
+    - 전체 게시글 목록 페이지
+    - 페이징을 위한 설정
+    -- String pageNum → currentPage : 현재 페이지 인덱스 번호를 가져온다.
+    -- count : DAO의 getAllCount 메서드를 호출하여 전체 게시글 개수를 가져온다.
+    -- startRow : 페이지의 시작 번호
+    -- endRow : 페이지의 끝 번호
+
+    - DAO의 allBoard 메서드를 호출해서 결과값을 벡터에 저장한다.
+    - 받아온 결과(게시글 수)만큼 for 문으로 목록을 출력한다.
+
+6. BoardIn.jsp
+    - 한 개의 게시글 보기 페이지
+    - 받아온 글번호를 DAO의 oneBoard() 메서드를 호출할때 넘겨준다
+    - oneBoard 메서드에서 반환받은 결과물을 BoardBean 타입으로 저장한다
+    - 저장된 자바빈에서 보여줄 항목을 표현식으로 출력한다
+
+7. ReWriteForm.jsp
+    - 댓글을 저장하게 되면, ref, re_step, re_level이 변하기 때문에 페이지가 넘어올때 받아온다
+    - 댓글 등록은 새글등록과 유사하다
+    - 입력받은 내용들을 가지고 ReWriteProc.jsp 페이지로 이동한다
+
+8. ReWriteProc.jsp
+    - 댓글의 저장한 글(데이터)들을 자바빈에 매핑한다.
+    - 매핑된 자바빈을 DAO로 넘겨주면서 reWriteBoard() 메서드를 호출한다
+
+9. UpdateForm.jsp
+    - 글 번호를 기준으로 기존에 등록된 내용을 출력한다
+    - 수정할 부분은 input 태그로 받아서 글번호와 함께 UpdateProc.jsp으로 넘어간다
+
+10. UpdateProc.jsp
+    - 수정 폼에서 받아온 데이터를 자바빈에 매핑한다
+    - 수정 폼에서 받은 비밀번호와 DB의 비밀번호가 같은지 검증 후 수정 메서드 oneUpdateBoard() 를 호출한다
+
+
+11. DeleteForm.jsp
+    - 삭제하기 위해서 비밀번호를 검증한다.
+    - 선택한 글의 기존(DB에 저장된) 비밀번호와 DeleteForm에서 입력받은 비밀번호를 검증한다
+    - 선택한 글의 글번호를 기준으로 DeleteProc.jsp를 호출한다
+
+12. DeleteProc.jsp
+    - 비밀번호 검증을 위해서 글번호와 입력한 비밀번호를 가지고 온다
+    - 글번호를 기준으로 getPass() 메서드를 호출해서 그 글의 저장된 비번(password)을 가지고 온다
+    - 비밀번호가 동일하면 글 삭제 메서드 deleteBoard()를 호출한다
+    - 비밀번호가 틀리면 자바스크립트로 alert 창을 띄우고 뒤로가기를 실행한다

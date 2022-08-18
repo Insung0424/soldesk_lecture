@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  
+<script>
+	$(document).ready(function(){
+		$('#aa').css('color','blue');
+	});
+	
+	$(document).ready(function(){
+		$('.bb').css('color','orange');
+		$('p.bb').css('background','yellow');
+	});
+	
+	$(document).ready(function(){
+		$('body *').css('color','green');
+	});
+	
+	$(function(){
+		$("p[title]").css('background-color','yellow');
+		$("p[title=cc]").css('color','orange');
+		$("p[title!=cc]").css('color','red');
+		
+	});
+	
+	function on(){
+		var n= $("<p>");
+		n.html("add");
+		$("#a1").append(n);
+	}
+	function on(){
+		var n= $("<p>");
+		n.html("add");
+		$("#a1").prepend(n);
+	}
+	
+	function del1(){
+		$("#ii").remove();
+	}
+	function del2(){
+		$("#ii").empty();
+	}
+	
+	function size(){
+		$("#a").animate({
+			width:400,
+			height:400
+		},'slow');
+	}
+	
+	function po(){
+		$("#a").animate({
+			left:400,
+			top:400
+		},'slow');
+	}
+	
+	$(function(){
+		$('button').click(function(){
+			$(this).text('unactive');
+			$(this).parent().css('color','blue');
+			$(this).parent().find('span').text('active');
+		})
+	})
+</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+			<li>four</li>
+		</ul>
+	</div>
+	
+	<h1 id="aa">제이쿼리</h1>
+	<p class="bb">안녕하세요</p>
+
+
+	<p class="cc">안녕하세요</p>
+	<p class="dd">hi</p>
+	
+	<div id="a1">
+		<p>tag</p>
+	</div>
+	<button onclick="on()">after</button>
+	<button onclick="pre()">before</button>
+	
+	<div id ="gg">
+	<p>tag</p>
+	<p id="ii">id is ii</p>
+	<p>tag</p>
+	</div>
+	<button onclick="del1()">delete1</button>
+	<button onclick="del2()">delete2</button>
+	
+	<button onclick="size()">크기 설정</button>
+    <button onclick="po()">위치 설정</button>
+    <div id="a"></div>
+    
+    	<div>
+           <span>비활성화</span>
+           <button>활성화</button>
+       </div>
+
+       <div>
+            <span>비활성화</span>
+            <button>활성화</button>
+       </div>
+	
+</body>
+</html>

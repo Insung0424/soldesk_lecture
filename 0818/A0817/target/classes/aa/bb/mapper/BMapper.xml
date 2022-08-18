@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aa.bb.mapper.BMapper">
+	<select resultType="aa.bb.main.BoardVO" id="getList">
+		select * from t_board order by bnum desc
+	</select>
+	
+	<insert id="insert" parameterType="aa.bb.main.BoardVO">
+		insert into t_board(bnum, title, content, writer) values(seq_bo.nextVal,#{title},#{content},#{writer})
+	</insert>
+	
+	<insert id="inkey" parameterType="aa.bb.main.BoardVO">
+		<selectKey keyProperty="bnum" order="BEFORE" resultType="int">
+			select seq_bo.nextVal from dual
+		</selectKey>
+			insert into t_board(bnum, title, content, writer) values(#{bnum},#{title},#{content},#{writer})
+	</insert>
+	
+	<select id="read" resultType="aa.bb.main.BoardVO">
+		select * from t_board where bnum = #{bnum}
+	</select>
+	
+	<update id="update">
+		update t_board set content = #{content}, title = #{title}, writer = #{writer},
+		updateDate = sysdate where bnum = #{bnum}
+	</update>
+		
+	<delete id="delete">
+		delete t_board where bnum = #{bnum}  
+	</delete>
+	
+	<select id="getPage" resultType="aa.bb.main.BoardVO">
+		<![CDATA[
+			select bnum,title,content, writer, redate, updatedate
+			from
+			(select /*+INDEX_DESC(t_board pk_board) */
+			rownum rn, bnum, title, content, writer, redate, updatedate
+			from t_board
+			where rownum<= (#{pNum} * #{amount})
+			)
+			where rn>(#{pNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	
+</mapper>
